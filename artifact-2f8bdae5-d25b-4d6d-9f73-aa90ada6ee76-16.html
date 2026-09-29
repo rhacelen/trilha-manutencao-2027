@@ -1,0 +1,2073 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trilha de Formação Técnica - Manutenção 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root {
+    --blue: #0573FA;
+    --orange: #FA6420;
+    --white: #ffffff;
+    --light-bg: #F4F7FF;
+    --gray-light: #F0F2F5;
+    --gray-mid: #C8D0DC;
+    --gray-text: #6B7280;
+    --dark: #1A1D23;
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --purple: #8B5CF6;
+    --teal: #0D9488;
+    --shadow: 0 4px 24px rgba(5,115,250,0.08);
+    --shadow-card: 0 2px 12px rgba(0,0,0,0.07);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Sora', sans-serif; background: var(--light-bg); color: var(--dark); min-height: 100vh; }
+
+  /* LOGIN */
+  .login-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--light-bg); padding: 24px; }
+  .login-card { background: white; border-radius: var(--radius); padding: 48px 40px; width: 100%; max-width: 440px; box-shadow: 0 8px 40px rgba(5,115,250,0.12); border: 1px solid rgba(5,115,250,0.08); }
+  .login-title-area { margin-bottom: 28px; text-align: center; }
+  .login-main-title { font-size: 20px; font-weight: 800; color: var(--dark); line-height: 1.3; margin-bottom: 4px; }
+  .login-main-title span { color: var(--blue); }
+  .login-main-sub { font-size: 12px; color: var(--gray-text); }
+  .login-divider { height: 1px; background: var(--gray-light); margin: 20px 0; }
+  .login-year-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(5,115,250,0.08); color: var(--blue); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; margin-bottom: 16px; }
+  .login-subtitle { font-size: 13px; color: var(--gray-text); text-align: center; margin-bottom: 28px; line-height: 1.6; }
+  .login-form-group { margin-bottom: 16px; }
+  .login-label { display: block; font-size: 12px; font-weight: 600; color: var(--dark); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .login-input { width: 100%; border: 1.5px solid var(--gray-mid); border-radius: var(--radius-sm); padding: 12px 16px; font-family: 'Sora', sans-serif; font-size: 14px; color: var(--dark); outline: none; transition: border-color 0.2s; background: white; }
+  .login-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(5,115,250,0.1); }
+  .login-btn { width: 100%; background: var(--blue); color: white; border: none; border-radius: var(--radius-sm); padding: 14px; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+  .login-btn:hover { background: #0A4FD4; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(5,115,250,0.3); }
+  .login-error { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 10px 14px; font-size: 12px; color: var(--danger); margin-top: 12px; display: none; }
+
+  /* APP */
+  .app-wrapper { display: none; }
+  .app-wrapper.visible { display: block; }
+
+  /* HEADER */
+  .header { background: var(--white); border-bottom: 1px solid rgba(5,115,250,0.1); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(5,115,250,0.06); }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .header-title-block { display: flex; flex-direction: column; gap: 1px; }
+  .header-main-title { font-size: 14px; font-weight: 700; color: var(--dark); }
+  .header-main-title span { color: var(--blue); }
+  .header-trail-year { font-size: 11px; color: var(--gray-text); margin-top: 1px; }
+  .year-tag { display: inline-flex; align-items: center; background: rgba(5,115,250,0.08); color: var(--blue); border-radius: 6px; padding: 2px 8px; font-size: 11px; font-weight: 700; }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+  .user-badge { display: flex; align-items: center; gap: 10px; background: var(--light-bg); border: 1px solid rgba(5,115,250,0.15); border-radius: 40px; padding: 6px 16px 6px 6px; }
+  .user-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700; }
+  .user-name { font-size: 12px; font-weight: 600; color: var(--dark); line-height: 1; }
+  .user-email-small { font-size: 10px; color: var(--gray-text); line-height: 1; }
+  .admin-btn { background: var(--orange); color: white; border: none; border-radius: 40px; padding: 8px 18px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
+  .admin-btn:hover { background: #E5501A; transform: translateY(-1px); }
+  .logout-btn { background: transparent; color: var(--gray-text); border: 1.5px solid var(--gray-mid); border-radius: 8px; padding: 7px 14px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .logout-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+  /* FAB */
+  .fab-add-training { position: fixed; bottom: 32px; right: 32px; z-index: 150; display: none; align-items: center; gap: 10px; background: var(--blue); color: white; border: none; border-radius: 50px; padding: 14px 22px; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 24px rgba(5,115,250,0.35); transition: all 0.2s; }
+  .fab-add-training:hover { background: #0A4FD4; transform: translateY(-2px); }
+  .fab-add-training .fab-icon { width: 24px; height: 24px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; }
+  .fab-add-training.visible { display: flex; }
+  .admin-quick-bar { position: fixed; bottom: 96px; right: 32px; z-index: 149; display: none; flex-direction: column; gap: 8px; align-items: flex-end; }
+  .admin-quick-bar.visible { display: flex; }
+  .admin-quick-btn { display: flex; align-items: center; gap: 8px; background: white; color: var(--dark); border: 1.5px solid rgba(5,115,250,0.15); border-radius: 40px; padding: 8px 16px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: all 0.2s; white-space: nowrap; }
+  .admin-quick-btn:hover { border-color: var(--blue); color: var(--blue); transform: translateX(-2px); }
+  .admin-quick-btn .qb-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* NAV */
+  .nav-tabs { background: var(--white); border-bottom: 1px solid rgba(5,115,250,0.08); padding: 0 40px; display: flex; gap: 4px; }
+  .nav-tab { padding: 15px 22px; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 500; color: var(--gray-text); border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .nav-tab:hover { color: var(--blue); }
+  .nav-tab.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 600; }
+
+  /* MAIN */
+  .main-content { max-width: 1200px; margin: 0 auto; padding: 32px 24px 100px; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* CARDS */
+  .card { background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-card); border: 1px solid rgba(5,115,250,0.06); }
+  .card-sm { background: var(--white); border-radius: var(--radius-sm); padding: 20px; box-shadow: var(--shadow-card); border: 1px solid rgba(5,115,250,0.06); }
+
+  /* GRIDS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  /* SECTION TAG */
+  .section-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(5,115,250,0.08); color: var(--blue); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
+
+  /* HERO */
+  .hero-banner { background: linear-gradient(135deg, #0573FA 0%, #0A4FD4 60%, #0A3BA8 100%); border-radius: var(--radius); padding: 48px 40px; color: white; position: relative; overflow: hidden; margin-bottom: 28px; }
+  .hero-banner::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+  .hero-banner::after { content: ''; position: absolute; bottom: -80px; right: 100px; width: 220px; height: 220px; background: rgba(255,255,255,0.03); border-radius: 50%; }
+  .hero-year-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .hero-title { font-size: 36px; font-weight: 800; line-height: 1.15; margin-bottom: 12px; color: white; }
+  .hero-subtitle { font-size: 15px; opacity: 0.85; line-height: 1.7; max-width: 560px; margin-bottom: 28px; }
+  .hero-stats { display: flex; gap: 32px; }
+  .hero-stat { display: flex; flex-direction: column; gap: 2px; }
+  .hero-stat-value { font-size: 28px; font-weight: 800; }
+  .hero-stat-label { font-size: 11px; opacity: 0.7; font-weight: 500; }
+
+  /* PROGRESS */
+  .progress-bar-bg { background: var(--gray-light); border-radius: 100px; height: 10px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 100px; background: var(--blue); transition: width 1s ease; position: relative; }
+  .progress-bar-fill::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; background: white; border: 3px solid var(--blue); border-radius: 50%; box-shadow: 0 2px 6px rgba(5,115,250,0.3); }
+
+  /* POINTS */
+  .points-card { background: linear-gradient(135deg, #FFF7F3, #FFF0E8); border: 2px solid rgba(250,100,32,0.15); border-radius: var(--radius); padding: 28px; }
+  .points-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+  .point-item { background: white; border-radius: var(--radius-sm); padding: 20px; text-align: center; border: 1px solid rgba(250,100,32,0.08); }
+  .point-value { font-size: 32px; font-weight: 800; color: var(--orange); line-height: 1; }
+  .point-label { font-size: 11px; color: var(--gray-text); margin-top: 6px; font-weight: 500; line-height: 1.4; }
+
+  /* STEPS */
+  .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 24px; }
+  .step-card { background: var(--white); border-radius: var(--radius-sm); padding: 24px 16px; text-align: center; border: 1px solid rgba(5,115,250,0.08); transition: all 0.2s; }
+  .step-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .step-number { width: 40px; height: 40px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 16px; font-weight: 800; margin: 0 auto 12px; }
+  .step-icon { font-size: 26px; margin-bottom: 10px; }
+  .step-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .step-desc { font-size: 11px; color: var(--gray-text); line-height: 1.5; }
+
+  /* MISSION */
+  .mission-section { margin-bottom: 24px; }
+  .mission-header { margin-bottom: 24px; }
+  .mission-lead { font-size: 15px; color: var(--gray-text); line-height: 1.8; max-width: 780px; }
+  .mission-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+  .mission-pillar { background: var(--light-bg); border-radius: var(--radius-sm); padding: 22px; border-left: 3px solid var(--blue); }
+  .mission-pillar-icon { font-size: 24px; margin-bottom: 10px; }
+  .mission-pillar-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .mission-pillar-desc { font-size: 12px; color: var(--gray-text); line-height: 1.6; }
+
+  /* ===== CULTURA SOU ===== */
+  .sou-card { background: linear-gradient(135deg, #0573FA 0%, #0A4FD4 100%); border-radius: var(--radius); color: white; margin-top: 24px; overflow: hidden; }
+  .sou-header { padding: 28px 32px 20px; display: flex; align-items: center; gap: 20px; }
+  .sou-badge { width: 64px; height: 64px; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; flex-shrink: 0; letter-spacing: -1px; }
+  .sou-title { font-size: 18px; font-weight: 800; margin-bottom: 5px; }
+  .sou-subtitle { font-size: 13px; opacity: 0.85; line-height: 1.6; max-width: 620px; }
+  .sou-equation { margin: 0 32px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 14px 20px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; font-size: 12px; font-weight: 700; text-align: center; }
+  .sou-eq-item { background: rgba(255,255,255,0.15); border-radius: 6px; padding: 4px 10px; }
+  .sou-eq-item.result { background: rgba(255,255,255,0.25); font-size: 13px; }
+  .sou-eq-op { opacity: 0.6; }
+  .sou-safety { margin: 0 32px 20px; background: rgba(250,100,32,0.25); border: 1px solid rgba(250,100,32,0.45); border-radius: 10px; padding: 14px 20px; display: flex; align-items: center; gap: 14px; }
+  .sou-safety-icon { font-size: 26px; flex-shrink: 0; }
+  .sou-safety-title { font-size: 13px; font-weight: 800; letter-spacing: 0.03em; margin-bottom: 3px; }
+  .sou-safety-desc { font-size: 12px; opacity: 0.85; line-height: 1.5; }
+  .sou-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 12px; }
+  .sou-atributos { padding: 0 32px 28px; }
+  .sou-atributos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .sou-atributo { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; padding: 18px; }
+  .sou-atributo-icon { font-size: 22px; margin-bottom: 8px; }
+  .sou-atributo-name { font-size: 13px; font-weight: 800; letter-spacing: 0.05em; margin-bottom: 5px; }
+  .sou-atributo-desc { font-size: 11px; opacity: 0.82; line-height: 1.55; }
+
+  /* PROFILE */
+  .profile-card { background: linear-gradient(135deg, #0573FA 0%, #0A4FD4 100%); border-radius: var(--radius); padding: 28px; color: white; display: flex; align-items: center; gap: 24px; margin-bottom: 28px; }
+  .profile-avatar-lg { width: 68px; height: 68px; border-radius: 50%; background: rgba(255,255,255,0.2); border: 3px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; flex-shrink: 0; }
+  .profile-info { flex: 1; }
+  .profile-greeting { font-size: 13px; opacity: 0.8; margin-bottom: 2px; }
+  .profile-name { font-size: 22px; font-weight: 700; margin-bottom: 2px; }
+  .profile-role { font-size: 12px; opacity: 0.75; margin-bottom: 16px; }
+  .profile-stats { display: flex; gap: 20px; flex-wrap: wrap; }
+  .profile-stat { display: flex; flex-direction: column; gap: 2px; }
+  .profile-stat-value { font-size: 20px; font-weight: 800; }
+  .profile-stat-label { font-size: 10px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* CIRCULAR PROGRESS */
+  .circular-progress { position: relative; width: 96px; height: 96px; flex-shrink: 0; }
+  .circular-progress svg { transform: rotate(-90deg); }
+  .circular-progress .progress-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+  .circular-progress .progress-value { font-size: 19px; font-weight: 800; display: block; }
+  .circular-progress .progress-sublabel { font-size: 9px; opacity: 0.7; display: block; }
+
+  /* ACCORDION */
+  .training-accordion { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(5,115,250,0.08); box-shadow: var(--shadow-card); margin-bottom: 12px; overflow: hidden; transition: box-shadow 0.2s, border-color 0.2s; }
+  .training-accordion:hover { border-color: rgba(5,115,250,0.18); box-shadow: var(--shadow); }
+  .training-accordion.is-open { border-color: rgba(5,115,250,0.25); box-shadow: var(--shadow); }
+  .training-accordion.status-completed { border-left: 4px solid var(--success); }
+  .training-accordion.status-in-progress { border-left: 4px solid var(--blue); }
+  .training-accordion.status-pending { border-left: 4px solid var(--warning); }
+  .training-accordion.status-locked { border-left: 4px solid var(--gray-mid); }
+  .accordion-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; user-select: none; gap: 16px; }
+  .accordion-header:hover { background: rgba(5,115,250,0.02); }
+  .accordion-left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+  .training-num-badge { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; flex-shrink: 0; background: var(--light-bg); color: var(--blue); }
+  .training-num-badge.completed { background: rgba(34,197,94,0.1); color: var(--success); }
+  .training-num-badge.in-progress { background: rgba(5,115,250,0.1); color: var(--blue); }
+  .training-num-badge.pending { background: rgba(245,158,11,0.1); color: var(--warning); }
+  .training-num-badge.locked { background: var(--gray-light); color: var(--gray-text); }
+  .accordion-info { flex: 1; min-width: 0; }
+  .accordion-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .accordion-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .accordion-meta-item { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--gray-text); font-weight: 500; }
+  .accordion-meta-item strong { color: var(--dark); font-weight: 600; }
+  .accordion-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .etapas-mini { display: flex; align-items: center; gap: 4px; }
+  .etapa-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--gray-mid); background: white; transition: all 0.2s; }
+  .etapa-dot.done { background: var(--success); border-color: var(--success); }
+  .etapa-dot.active { background: var(--blue); border-color: var(--blue); }
+  .etapa-dot.locked { background: var(--gray-light); border-color: var(--gray-mid); }
+  .status-pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+  .status-pill.completed { background: rgba(34,197,94,0.1); color: var(--success); }
+  .status-pill.in-progress { background: rgba(5,115,250,0.1); color: var(--blue); }
+  .status-pill.pending { background: rgba(245,158,11,0.1); color: var(--warning); }
+  .status-pill.locked { background: var(--gray-light); color: var(--gray-text); }
+  .training-pts-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(250,100,32,0.08); color: var(--orange); border-radius: 20px; padding: 5px 12px; font-size: 12px; font-weight: 700; }
+  .accordion-chevron { width: 32px; height: 32px; border-radius: 50%; background: var(--light-bg); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--blue); transition: all 0.25s; flex-shrink: 0; }
+  .accordion-chevron.open { transform: rotate(180deg); background: rgba(5,115,250,0.1); }
+  .accordion-body { display: none; border-top: 1px solid var(--gray-light); animation: slideDown 0.25s ease; }
+  .accordion-body.open { display: block; }
+  @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+  .etapas-wrapper { padding: 20px 24px 24px; }
+  .etapas-instruction { font-size: 12px; color: var(--gray-text); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; background: var(--light-bg); border-radius: 8px; padding: 8px 12px; }
+  .etapa-row { display: flex; align-items: stretch; gap: 0; margin-bottom: 8px; position: relative; }
+  .etapa-row:not(:last-child)::after { content: ''; position: absolute; left: 20px; top: 52px; width: 2px; height: calc(100% - 44px + 8px); background: var(--gray-light); z-index: 0; }
+  .etapa-row.etapa-done:not(:last-child)::after { background: rgba(34,197,94,0.3); }
+  .etapa-connector { width: 42px; display: flex; flex-direction: column; align-items: center; padding-top: 14px; flex-shrink: 0; position: relative; z-index: 1; }
+  .etapa-step-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; border: 2px solid var(--gray-mid); background: white; transition: all 0.2s; }
+  .etapa-step-icon.done { background: var(--success); border-color: var(--success); color: white; }
+  .etapa-step-icon.available { background: var(--blue); border-color: var(--blue); color: white; }
+  .etapa-step-icon.available-orange { background: var(--orange); border-color: var(--orange); color: white; }
+  .etapa-step-icon.locked { background: var(--gray-light); border-color: var(--gray-mid); color: var(--gray-text); }
+  .etapa-step-icon.present { background: var(--success); border-color: var(--success); color: white; }
+  .etapa-step-icon.absent { background: var(--danger); border-color: var(--danger); color: white; }
+  .etapa-step-icon.waiting { background: rgba(245,158,11,0.15); border-color: var(--warning); color: var(--warning); }
+  .etapa-card-inner { flex: 1; background: var(--white); border-radius: var(--radius-sm); border: 1.5px solid var(--gray-light); padding: 14px 18px; transition: all 0.2s; min-width: 0; }
+  .etapa-card-inner.done { border-color: rgba(34,197,94,0.2); background: rgba(34,197,94,0.02); }
+  .etapa-card-inner.available { border-color: rgba(5,115,250,0.2); background: rgba(5,115,250,0.02); }
+  .etapa-card-inner.available-orange { border-color: rgba(250,100,32,0.2); background: rgba(250,100,32,0.02); }
+  .etapa-card-inner.locked { border-color: var(--gray-light); background: var(--gray-light); opacity: 0.7; }
+  .etapa-card-inner.present { border-color: rgba(34,197,94,0.2); background: rgba(34,197,94,0.02); }
+  .etapa-card-inner.absent { border-color: rgba(239,68,68,0.2); background: rgba(239,68,68,0.02); }
+  .etapa-card-inner.waiting { border-color: rgba(245,158,11,0.2); background: rgba(245,158,11,0.02); }
+  .etapa-card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .etapa-card-left { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+  .etapa-label-num { font-size: 10px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.06em; }
+  .etapa-label-name { font-size: 13px; font-weight: 700; color: var(--dark); }
+  .etapa-label-desc { font-size: 11px; color: var(--gray-text); margin-top: 2px; }
+  .etapa-card-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .etapa-status-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .etapa-status-badge.done { background: rgba(34,197,94,0.1); color: var(--success); }
+  .etapa-status-badge.available { background: rgba(5,115,250,0.1); color: var(--blue); }
+  .etapa-status-badge.available-orange { background: rgba(250,100,32,0.1); color: var(--orange); }
+  .etapa-status-badge.locked { background: var(--gray-light); color: var(--gray-text); }
+  .etapa-status-badge.present { background: rgba(34,197,94,0.1); color: var(--success); }
+  .etapa-status-badge.absent { background: rgba(239,68,68,0.1); color: var(--danger); }
+  .etapa-status-badge.waiting { background: rgba(245,158,11,0.1); color: var(--warning); }
+  .etapa-pts-mini { display: inline-flex; align-items: center; gap: 3px; background: rgba(250,100,32,0.07); color: var(--orange); border-radius: 20px; padding: 3px 9px; font-size: 11px; font-weight: 700; }
+  .etapa-body-content { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--gray-light); }
+  .etapa-body-content.open { display: block; }
+  .etapa-action-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: var(--radius-sm); font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; margin-top: 8px; }
+  .etapa-action-btn.blue { background: var(--blue); color: white; }
+  .etapa-action-btn.blue:hover { background: #0A4FD4; transform: translateY(-1px); }
+  .etapa-action-btn.orange { background: var(--orange); color: white; }
+  .etapa-action-btn.orange:hover { background: #E5501A; transform: translateY(-1px); }
+  .etapa-action-btn.ghost { background: transparent; color: var(--gray-text); border: 1.5px solid var(--gray-mid); }
+  .etapa-action-btn.ghost:hover { border-color: var(--blue); color: var(--blue); }
+  .etapa-response-box { background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: 8px; padding: 12px 14px; font-size: 12px; }
+  .etapa-response-box .resp-label { font-size: 10px; font-weight: 700; color: var(--success); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .etapa-response-box .resp-answers { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .resp-chip { background: rgba(5,115,250,0.08); color: var(--blue); border-radius: 20px; padding: 2px 9px; font-size: 11px; font-weight: 700; }
+  .resp-chip.orange { background: rgba(250,100,32,0.08); color: var(--orange); }
+  .resp-text { font-size: 12px; color: var(--dark); line-height: 1.6; margin-top: 4px; }
+  .locked-msg { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--gray-text); line-height: 1.5; background: var(--gray-light); border-radius: 8px; padding: 10px 12px; }
+  .locked-msg .lock-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* FORMS */
+  .form-group { margin-bottom: 18px; }
+  .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+  .form-label .required { color: var(--orange); }
+  .form-textarea { width: 100%; border: 1.5px solid var(--gray-mid); border-radius: var(--radius-sm); padding: 12px 16px; font-family: 'Sora', sans-serif; font-size: 13px; color: var(--dark); resize: vertical; min-height: 90px; transition: border-color 0.2s; outline: none; }
+  .form-textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(5,115,250,0.08); }
+  .form-input { width: 100%; border: 1.5px solid var(--gray-mid); border-radius: var(--radius-sm); padding: 10px 14px; font-family: 'Sora', sans-serif; font-size: 13px; color: var(--dark); outline: none; transition: border-color 0.2s; background: white; }
+  .form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(5,115,250,0.08); }
+
+  /* SCALE */
+  .scale-question { margin-bottom: 20px; }
+  .scale-q-text { font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 10px; line-height: 1.5; }
+  .scale-options { display: flex; gap: 8px; flex-wrap: wrap; }
+  .scale-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gray-mid); background: white; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; color: var(--gray-text); }
+  .scale-btn:hover { border-color: var(--blue); color: var(--blue); background: rgba(5,115,250,0.05); }
+  .scale-btn.selected { background: var(--blue); border-color: var(--blue); color: white; }
+  .scale-btn.selected.orange { background: var(--orange); border-color: var(--orange); }
+  .scale-labels { display: flex; justify-content: space-between; margin-top: 6px; font-size: 10px; color: var(--gray-text); }
+
+  /* BUTTONS */
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: var(--radius-sm); font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-primary { background: var(--blue); color: white; }
+  .btn-primary:hover { background: #0A4FD4; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(5,115,250,0.25); }
+  .btn-orange { background: var(--orange); color: white; }
+  .btn-orange:hover { background: #E5501A; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(250,100,32,0.25); }
+  .btn-ghost { background: transparent; color: var(--gray-text); border: 1.5px solid var(--gray-mid); }
+  .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+  .btn-sm { padding: 7px 14px; font-size: 12px; }
+  .btn-lg { padding: 14px 28px; font-size: 14px; font-weight: 700; }
+
+  /* RANKING */
+  .ranking-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .ranking-table th { background: var(--light-bg); padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--gray-mid); }
+  .ranking-table td { padding: 14px 16px; font-size: 13px; border-bottom: 1px solid var(--gray-light); vertical-align: middle; }
+  .ranking-table tr:last-child td { border-bottom: none; }
+  .ranking-table tr:hover td { background: var(--light-bg); }
+  .rank-position { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-size: 13px; font-weight: 800; }
+  .rank-1 { background: linear-gradient(135deg, #FFD700, #FFA500); color: white; }
+  .rank-2 { background: linear-gradient(135deg, #C0C0C0, #A0A0A0); color: white; }
+  .rank-3 { background: linear-gradient(135deg, #CD7F32, #A0522D); color: white; }
+  .rank-other { background: var(--gray-light); color: var(--gray-text); }
+  .collab-name-cell { display: flex; align-items: center; gap: 10px; }
+  .collab-mini-avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: white; flex-shrink: 0; }
+  .participation-bar { display: flex; align-items: center; gap: 10px; }
+  .participation-bar-bg { flex: 1; height: 6px; background: var(--gray-light); border-radius: 100px; overflow: hidden; max-width: 80px; }
+  .participation-bar-fill { height: 100%; border-radius: 100px; background: var(--blue); }
+
+  /* STAT CARDS */
+  .stat-card { background: var(--white); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-card); border: 1px solid rgba(5,115,250,0.06); display: flex; flex-direction: column; gap: 8px; }
+  .stat-icon { width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 4px; }
+  .stat-icon.blue { background: rgba(5,115,250,0.08); }
+  .stat-icon.orange { background: rgba(250,100,32,0.08); }
+  .stat-icon.green { background: rgba(34,197,94,0.08); }
+  .stat-icon.purple { background: rgba(139,92,246,0.08); }
+  .stat-icon.teal { background: rgba(13,148,136,0.08); }
+  .stat-value { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1; }
+  .stat-label { font-size: 12px; color: var(--gray-text); font-weight: 500; }
+  .stat-change { font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 3px; }
+  .stat-change.up { color: var(--success); }
+  .stat-change.neutral { color: var(--gray-text); }
+
+  /* PRONTIDÃO */
+  .prontidao-card { background: linear-gradient(135deg, #0573FA 0%, #0A4FD4 100%); border-radius: var(--radius); padding: 24px; color: white; cursor: pointer; transition: all 0.2s; }
+  .prontidao-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(5,115,250,0.3); }
+  .prontidao-value { font-size: 48px; font-weight: 800; line-height: 1; margin: 8px 0; }
+  .prontidao-label { font-size: 13px; font-weight: 700; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.06em; }
+  .prontidao-desc { font-size: 11px; opacity: 0.75; line-height: 1.5; margin-top: 6px; }
+  .prontidao-mini-bars { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .prontidao-mini-row { display: flex; align-items: center; gap: 8px; }
+  .prontidao-mini-label { font-size: 10px; opacity: 0.8; width: 100px; flex-shrink: 0; }
+  .prontidao-mini-bar-bg { flex: 1; height: 4px; background: rgba(255,255,255,0.2); border-radius: 100px; overflow: hidden; }
+  .prontidao-mini-bar-fill { height: 100%; border-radius: 100px; background: white; transition: width 0.8s ease; }
+  .prontidao-mini-val { font-size: 10px; font-weight: 700; width: 32px; text-align: right; opacity: 0.9; }
+
+  /* ADMIN PANEL */
+  .admin-panel { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 200; backdrop-filter: blur(4px); }
+  .admin-panel.open { display: flex; }
+  .admin-sidebar { width: 260px; background: var(--dark); height: 100%; padding: 24px 0; flex-shrink: 0; overflow-y: auto; position: relative; }
+  .admin-logo-area { padding: 0 24px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px; }
+  .admin-panel-main-title { font-size: 14px; font-weight: 700; color: white; line-height: 1.3; }
+  .admin-panel-sub { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+  .admin-nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 24px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.2s; border-left: 3px solid transparent; }
+  .admin-nav-item:hover { color: white; background: rgba(255,255,255,0.05); }
+  .admin-nav-item.active { color: white; background: rgba(5,115,250,0.2); border-left-color: var(--blue); }
+  .admin-content { flex: 1; background: var(--light-bg); overflow-y: auto; padding: 32px; }
+  .admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+  .admin-title { font-size: 20px; font-weight: 700; color: var(--dark); }
+  .admin-section { display: none; }
+  .admin-section.active { display: block; }
+  .admin-close-btn { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.1); border: none; color: white; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .admin-close-btn:hover { background: rgba(255,255,255,0.2); }
+
+  /* PRESENCE TABLE */
+  .presence-table { width: 100%; border-collapse: collapse; }
+  .presence-table th { background: var(--light-bg); padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--gray-mid); }
+  .presence-table td { padding: 12px 14px; font-size: 13px; border-bottom: 1px solid var(--gray-light); vertical-align: middle; }
+  .presence-select { border: 1.5px solid var(--gray-mid); border-radius: 8px; padding: 6px 10px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; outline: none; transition: border-color 0.2s; }
+  .presence-select.participated { color: var(--success); border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+  .presence-select.not-participated { color: var(--danger); border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+  .presence-select.pending { color: var(--warning); border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.05); }
+
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 400; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+  .modal-overlay.open { display: flex; }
+  .modal { background: white; border-radius: var(--radius); padding: 32px; width: 90%; max-width: 620px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); animation: modalIn 0.2s ease; max-height: 90vh; overflow-y: auto; }
+  @keyframes modalIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .modal-title { font-size: 17px; font-weight: 700; color: var(--dark); }
+  .modal-close { width: 32px; height: 32px; border-radius: 50%; background: var(--gray-light); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--gray-text); transition: all 0.2s; }
+  .modal-close:hover { background: var(--gray-mid); }
+  .modal-training-badge { background: rgba(5,115,250,0.08); border-radius: 8px; padding: 8px 12px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 6px; }
+  .modal-training-meta { font-size: 11px; color: var(--gray-text); margin-bottom: 20px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .modal-progress { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; font-size: 12px; color: var(--gray-text); }
+  .modal-progress-bar { flex: 1; height: 4px; background: var(--gray-light); border-radius: 100px; margin: 0 12px; overflow: hidden; }
+  .modal-progress-fill { height: 100%; border-radius: 100px; background: var(--blue); transition: width 0.3s; }
+  .modal-success { text-align: center; padding: 24px 0; }
+  .modal-success-icon { font-size: 48px; margin-bottom: 12px; }
+  .modal-success-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .modal-success-sub { font-size: 13px; color: var(--gray-text); line-height: 1.6; }
+
+  /* TOAST */
+  .toast-container { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 500; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .toast { background: var(--dark); color: white; border-radius: var(--radius-sm); padding: 14px 20px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); animation: toastIn 0.3s ease; max-width: 360px; }
+  .toast.success { border-left: 4px solid var(--success); }
+  .toast.error { border-left: 4px solid var(--danger); }
+  .toast.info { border-left: 4px solid var(--blue); }
+  @keyframes toastIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+  /* MISC */
+  .filter-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .filter-btn { padding: 7px 16px; border-radius: 20px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--gray-mid); background: white; color: var(--gray-text); transition: all 0.2s; }
+  .filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+  .filter-btn:hover:not(.active) { border-color: var(--blue); color: var(--blue); }
+  .chart-container { position: relative; height: 220px; }
+  .chart-wrapper { background: white; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-card); border: 1px solid rgba(5,115,250,0.06); }
+  .chart-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+  .tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .tag-blue { background: rgba(5,115,250,0.1); color: var(--blue); }
+  .tag-green { background: rgba(34,197,94,0.1); color: var(--success); }
+  .tag-gray { background: var(--gray-light); color: var(--gray-text); }
+  .tag-orange { background: rgba(250,100,32,0.1); color: var(--orange); }
+  .pending-count { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: var(--orange); color: white; border-radius: 50%; font-size: 10px; font-weight: 700; margin-left: 4px; }
+  .admin-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(250,100,32,0.1); color: var(--orange); border-radius: 20px; padding: 3px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .indicator-row { display: flex; align-items: center; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--gray-light); }
+  .indicator-row:last-child { border-bottom: none; }
+  .indicator-label { font-size: 13px; color: var(--gray-text); font-weight: 500; }
+  .indicator-value { font-size: 14px; font-weight: 700; color: var(--dark); }
+  .training-filter-select { border: 1.5px solid var(--gray-mid); border-radius: var(--radius-sm); padding: 8px 14px; font-family: 'Sora', sans-serif; font-size: 13px; color: var(--dark); outline: none; cursor: pointer; background: white; transition: border-color 0.2s; }
+  .training-filter-select:focus { border-color: var(--blue); }
+  .collab-list-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: white; border-radius: var(--radius-sm); border: 1px solid rgba(5,115,250,0.08); margin-bottom: 10px; transition: all 0.2s; }
+  .collab-list-item:hover { border-color: rgba(5,115,250,0.2); box-shadow: var(--shadow-card); }
+  .collab-list-info { display: flex; align-items: center; gap: 12px; }
+  .training-list-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: white; border-radius: var(--radius-sm); border: 1px solid rgba(5,115,250,0.08); margin-bottom: 10px; }
+  .training-list-num { width: 28px; height: 28px; background: rgba(5,115,250,0.08); color: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .points-config-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+  .points-config-item { background: white; border-radius: var(--radius-sm); padding: 16px; border: 1px solid rgba(5,115,250,0.08); }
+  .points-config-label { font-size: 12px; color: var(--gray-text); font-weight: 500; margin-bottom: 8px; }
+  .points-config-input { width: 100%; border: 1.5px solid var(--gray-mid); border-radius: 8px; padding: 8px 12px; font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 800; color: var(--orange); text-align: center; outline: none; transition: border-color 0.2s; }
+  .points-config-input:focus { border-color: var(--orange); }
+  .admin-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .empty-state { text-align: center; padding: 48px 24px; color: var(--gray-text); }
+  .empty-icon { font-size: 44px; margin-bottom: 12px; }
+  .empty-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: var(--dark); }
+  .empty-desc { font-size: 13px; line-height: 1.6; }
+  .privacy-notice { background: rgba(5,115,250,0.04); border: 1px solid rgba(5,115,250,0.12); border-radius: 8px; padding: 10px 14px; font-size: 11px; color: var(--blue); display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+  .training-overview-card { display: flex; align-items: flex-start; gap: 12px; background: var(--light-bg); border-radius: 10px; padding: 14px 16px; border: 1px solid rgba(5,115,250,0.08); }
+  .training-overview-num { width: 30px; height: 30px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .training-overview-info { flex: 1; }
+  .training-overview-name { font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+  .training-overview-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .training-overview-tag { font-size: 11px; color: var(--gray-text); display: flex; align-items: center; gap: 3px; }
+  .aval-section { background: white; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-card); border: 1px solid rgba(5,115,250,0.06); margin-top: 20px; }
+  .aval-section-title { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .aval-section-sub { font-size: 12px; color: var(--gray-text); margin-bottom: 20px; }
+  .aval-compare-card { background: var(--light-bg); border-radius: var(--radius-sm); padding: 16px; border: 1px solid rgba(5,115,250,0.08); margin-bottom: 12px; }
+  .aval-compare-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+  .aval-compare-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .aval-compare-label { font-size: 11px; color: var(--gray-text); width: 120px; flex-shrink: 0; }
+  .aval-compare-bar-bg { flex: 1; height: 8px; background: var(--gray-light); border-radius: 100px; overflow: hidden; }
+  .aval-compare-bar-fill { height: 100%; border-radius: 100px; transition: width 0.8s ease; }
+  .aval-compare-val { font-size: 12px; font-weight: 700; width: 32px; text-align: right; flex-shrink: 0; }
+  .evolution-badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+  .evolution-badge.positive { background: rgba(34,197,94,0.1); color: var(--success); }
+  .evolution-badge.neutral { background: var(--gray-light); color: var(--gray-text); }
+  .evolution-badge.negative { background: rgba(239,68,68,0.1); color: var(--danger); }
+  .prontidao-bar-inline { display: flex; align-items: center; gap: 8px; }
+  .prontidao-bar-inline-bg { flex: 1; height: 6px; background: var(--gray-light); border-radius: 100px; overflow: hidden; max-width: 100px; }
+  .prontidao-bar-inline-fill { height: 100%; border-radius: 100px; background: var(--blue); }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--gray-light); }
+  ::-webkit-scrollbar-thumb { background: var(--gray-mid); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--blue); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .header { padding: 0 16px; }
+    .nav-tabs { padding: 0 16px; overflow-x: auto; }
+    .main-content { padding: 20px 16px 100px; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .mission-pillars { grid-template-columns: 1fr; }
+    .points-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 16px; }
+    .hero-title { font-size: 24px; }
+    .profile-card { flex-direction: column; }
+    .admin-sidebar { width: 200px; }
+    .charts-grid { grid-template-columns: 1fr; }
+    .points-config-grid { grid-template-columns: 1fr 1fr; }
+    .admin-form-grid { grid-template-columns: 1fr; }
+    .login-card { padding: 32px 24px; }
+    .sou-atributos-grid { grid-template-columns: 1fr; }
+    .sou-header { flex-direction: column; align-items: flex-start; }
+    .fab-add-training { bottom: 20px; right: 16px; padding: 12px 18px; font-size: 12px; }
+    .admin-quick-bar { right: 16px; bottom: 80px; }
+    .scale-btn { width: 38px; height: 38px; font-size: 13px; }
+    .accordion-title { font-size: 13px; }
+    .accordion-right { flex-wrap: wrap; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-title-area">
+      <div class="login-main-title">Trilha de Formação Técnica<br><span>Manutenção</span></div>
+      <div class="login-main-sub">Desenvolvimento contínuo · 2027</div>
+    </div>
+    <div class="login-divider"></div>
+    <div style="text-align:center;margin-bottom:8px;"><span class="login-year-badge">🎯 Ciclo 2027</span></div>
+    <div class="login-subtitle">Acesse com seu e-mail corporativo para acompanhar sua jornada de aprendizagem.</div>
+    <div class="login-form-group">
+      <label class="login-label">E-mail corporativo</label>
+      <input type="email" class="login-input" id="loginEmail" placeholder="seu.nome@acelen.com.br" onkeydown="if(event.key==='Enter')doLogin()">
+    </div>
+    <button class="login-btn" onclick="doLogin()">Acessar minha jornada →</button>
+    <div class="login-error" id="loginError">E-mail não encontrado. Verifique e tente novamente.</div>
+    <div style="margin-top:20px;text-align:center;font-size:11px;color:var(--gray-text);">🔒 Seus dados são privados e acessíveis apenas por você.</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="app-wrapper" id="appWrapper">
+
+<header class="header">
+  <div class="header-left">
+    <div class="header-title-block">
+      <div class="header-main-title">Trilha de Formação Técnica · <span>Manutenção</span></div>
+      <div class="header-trail-year"><span class="year-tag">2027</span></div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="user-badge">
+      <div class="user-avatar" id="headerAvatar">--</div>
+      <div>
+        <div class="user-name" id="headerUserName">--</div>
+        <div class="user-email-small" id="headerUserEmail">--</div>
+      </div>
+    </div>
+    <button class="admin-btn" id="adminBtnHeader" onclick="openAdmin()" style="display:none;">⚙️ Admin</button>
+    <button class="logout-btn" onclick="doLogout()">Sair</button>
+  </div>
+</header>
+
+<nav class="nav-tabs">
+  <button class="nav-tab active" onclick="switchTab('sobre',this)">🎯 Sobre a Trilha</button>
+  <button class="nav-tab" onclick="switchTab('jornada',this)">🗺️ Minha Jornada <span class="pending-count" id="pendingBadge" style="display:none;">0</span></button>
+  <button class="nav-tab" onclick="switchTab('pontuacao',this)">🏆 Pontuação / Ranking</button>
+</nav>
+
+<div class="main-content">
+
+  <!-- ABA 1: SOBRE -->
+  <div class="tab-panel active" id="tab-sobre">
+
+    <div class="hero-banner">
+      <div class="hero-year-badge">🚀 Iniciativa de Desenvolvimento · 2027</div>
+      <div class="hero-title">Trilha de Formação Técnica<br>Manutenção 2027</div>
+      <div class="hero-subtitle">Desenvolvimento contínuo, conhecimento compartilhado e reconhecimento. Uma jornada de crescimento construída para o time de Manutenção em 2027.</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-value" id="heroTotalTrainings">6</span><span class="hero-stat-label">Treinamentos</span></div>
+        <div class="hero-stat"><span class="hero-stat-value" id="heroTotalCollab">7</span><span class="hero-stat-label">Participantes</span></div>
+        <div class="hero-stat"><span class="hero-stat-value" id="heroMaxPts">132</span><span class="hero-stat-label">Pontos máx.</span></div>
+        <div class="hero-stat"><span class="hero-stat-value">2027</span><span class="hero-stat-label">Ciclo atual</span></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <div><div class="section-tag">📊 Progresso Geral · 2027</div><div style="font-size:16px;font-weight:700;color:var(--dark);">Evolução da Trilha</div></div>
+        <div style="text-align:right;"><div style="font-size:26px;font-weight:800;color:var(--blue);" id="overallProgress">0%</div><div style="font-size:11px;color:var(--gray-text);" id="overallProgressLabel">calculando...</div></div>
+      </div>
+      <div style="margin:20px 0;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px;color:var(--gray-text);"><span>Início da Trilha</span><span>Conclusão</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="overallProgressBar" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- NOSSA MISSÃO -->
+    <div class="card mission-section" style="margin-bottom:24px;">
+      <div class="mission-header">
+        <div class="section-tag">💡 Nossa Missão</div>
+        <div style="font-size:22px;font-weight:800;color:var(--dark);margin-bottom:8px;">Por que realizar a Trilha de Formação Técnica?</div>
+        <div class="mission-lead">
+          Porque o desenvolvimento técnico não acontece em um único treinamento. Ele é construído ao longo de uma jornada estruturada, progressiva e conectada à realidade do negócio — onde cada etapa prepara o profissional para o próximo desafio.
+        </div>
+      </div>
+
+      <div class="mission-pillars">
+        <div class="mission-pillar"><div class="mission-pillar-icon">🗂️</div><div class="mission-pillar-title">Desenvolvimento estruturado</div><div class="mission-pillar-desc">Organiza o crescimento profissional de forma progressiva, conectando teoria, prática e aplicação no dia a dia.</div></div>
+        <div class="mission-pillar"><div class="mission-pillar-icon">📈</div><div class="mission-pillar-title">Evolução acompanhada</div><div class="mission-pillar-desc">Permite monitorar a evolução individual e coletiva, identificando avanços e oportunidades de melhoria ao longo da jornada.</div></div>
+        <div class="mission-pillar"><div class="mission-pillar-icon">🔗</div><div class="mission-pillar-title">Jornada contínua</div><div class="mission-pillar-desc">Transforma treinamentos isolados em uma jornada de desenvolvimento alinhada às necessidades técnicas e estratégicas da área.</div></div>
+        <div class="mission-pillar"><div class="mission-pillar-icon">🛡️</div><div class="mission-pillar-title">Preparação técnica</div><div class="mission-pillar-desc">Aumenta a capacidade dos profissionais para enfrentar os desafios técnicos da operação com mais segurança e confiança.</div></div>
+        <div class="mission-pillar"><div class="mission-pillar-icon">🤝</div><div class="mission-pillar-title">Compartilhamento de conhecimento</div><div class="mission-pillar-desc">Estimula a troca de experiências entre o time, fortalecendo a cultura de aprendizagem coletiva.</div></div>
+        <div class="mission-pillar"><div class="mission-pillar-icon">🎯</div><div class="mission-pillar-title">Alinhamento ao negócio</div><div class="mission-pillar-desc">Conecta o desenvolvimento das pessoas às prioridades estratégicas da Manutenção e da Acelen.</div></div>
+      </div>
+
+      <!-- =====================================================
+           SEÇÃO CULTURA SOU
+           ALTERAÇÃO: removidas as seções
+           "Comportamentos que praticamos" e "No que acreditamos"
+           Mantidos: cabeçalho, equação, segurança e atributos
+           ===================================================== -->
+      <div class="sou-card">
+
+        <!-- Cabeçalho -->
+        <div class="sou-header">
+          <div class="sou-badge">SOU</div>
+          <div>
+            <div class="sou-title">Cultura SOU — O que nos une e nos move</div>
+            <div class="sou-subtitle">
+              A Trilha de Formação Técnica está diretamente conectada à Cultura SOU. Desenvolvemos não apenas conhecimento técnico, mas também os comportamentos que tornam cada profissional mais seguro, colaborativo e orientado a resultados.
+            </div>
+          </div>
+        </div>
+
+        <!-- Equação -->
+        <div class="sou-equation">
+          <span class="sou-eq-item">🔧 Conhecimento Técnico</span>
+          <span class="sou-eq-op">+</span>
+          <span class="sou-eq-item">🧭 Cultura</span>
+          <span class="sou-eq-op">+</span>
+          <span class="sou-eq-item">🤝 Comportamento</span>
+          <span class="sou-eq-op">+</span>
+          <span class="sou-eq-item">⚙️ Aplicação Prática</span>
+          <span class="sou-eq-op">=</span>
+          <span class="sou-eq-item result">🚀 Desenvolvimento</span>
+        </div>
+
+        <!-- Nosso maior valor: a segurança -->
+        <div class="sou-safety">
+          <div class="sou-safety-icon">🛡️</div>
+          <div>
+            <div class="sou-safety-title">NOSSO MAIOR VALOR: A SEGURANÇA</div>
+            <div class="sou-safety-desc">Desenvolver competências técnicas contribui diretamente para uma atuação mais segura, consciente e responsável. Conhecimento protege pessoas e operações.</div>
+          </div>
+        </div>
+
+        <!-- Nossos Atributos -->
+        <div class="sou-atributos">
+          <div class="sou-section-label">Nossos Atributos</div>
+          <div class="sou-atributos-grid">
+
+            <div class="sou-atributo">
+              <div class="sou-atributo-icon">💡</div>
+              <div class="sou-atributo-name">INOVAÇÃO</div>
+              <div class="sou-atributo-desc">Capazes de melhorar continuamente, com agilidade e simplicidade.</div>
+            </div>
+
+            <div class="sou-atributo">
+              <div class="sou-atributo-icon">🎯</div>
+              <div class="sou-atributo-name">CONQUISTA</div>
+              <div class="sou-atributo-desc">Comprometidos em fazer acontecer com segurança, nos orientando sempre por resultados.</div>
+            </div>
+
+            <div class="sou-atributo">
+              <div class="sou-atributo-icon">🤝</div>
+              <div class="sou-atributo-name">UM SÓ TIME</div>
+              <div class="sou-atributo-desc">Corajosos para desafiar construtivamente uns aos outros, com verdade e respeito, promovendo colaboração genuína.</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- ===== FIM DA SEÇÃO CULTURA SOU ===== -->
+
+    </div>
+
+    <!-- SISTEMA DE PONTUAÇÃO -->
+    <div class="points-card" style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+        <span style="font-size:26px;">🏅</span>
+        <div>
+          <div class="section-tag" style="background:rgba(250,100,32,0.08);color:var(--orange);">Sistema de Pontuação 2027</div>
+          <div style="font-size:19px;font-weight:700;color:var(--dark);">Cada etapa concluída gera pontos!</div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:var(--gray-text);line-height:1.7;margin-bottom:20px;">Cada treinamento possui 4 etapas com pontuação: <strong>Autoavaliação</strong>, <strong>Participação</strong>, <strong>Avaliação de Reação</strong> e <strong>Reflexão</strong>.</div>
+      <div class="points-grid">
+        <div class="point-item"><div class="point-value" id="displayPtsAuto">3</div><div class="point-label">pontos por<br><strong>Autoavaliação</strong></div></div>
+        <div class="point-item"><div class="point-value" id="displayPtsParticipacao">10</div><div class="point-label">pontos por<br><strong>Participação</strong></div></div>
+        <div class="point-item"><div class="point-value" id="displayPtsReacao">4</div><div class="point-label">pontos por<br><strong>Av. de Reação</strong></div></div>
+        <div class="point-item" style="border:2px solid rgba(250,100,32,0.15);"><div class="point-value" id="displayPtsReflexao">5</div><div class="point-label">pontos por<br><strong>Reflexão</strong></div></div>
+      </div>
+    </div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="card" style="margin-bottom:24px;">
+      <div class="section-tag">🗺️ Passo a Passo</div>
+      <div style="font-size:19px;font-weight:700;color:var(--dark);margin-bottom:4px;">Como funciona?</div>
+      <div style="font-size:13px;color:var(--gray-text);margin-bottom:24px;">Cada treinamento possui 4 etapas sequenciais.</div>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-number">1</div><div class="step-icon">📝</div><div class="step-title">Autoavaliação</div><div class="step-desc">Liberada na semana do treinamento. Avalie seu conhecimento prévio.</div></div>
+        <div class="step-card"><div class="step-number">2</div><div class="step-icon">📅</div><div class="step-title">Participe</div><div class="step-desc">Compareça ao treinamento. Presença registrada pelo administrador.</div></div>
+        <div class="step-card"><div class="step-number">3</div><div class="step-icon">⭐</div><div class="step-title">Av. de Reação</div><div class="step-desc">Liberada após confirmação de presença. Avalie o treinamento.</div></div>
+        <div class="step-card"><div class="step-number">4</div><div class="step-icon">✍️</div><div class="step-title">Reflexão</div><div class="step-desc">Liberada após a Av. de Reação. Registre seus aprendizados.</div></div>
+        <div class="step-card"><div class="step-number">5</div><div class="step-icon">🏆</div><div class="step-title">Seja Reconhecido</div><div class="step-desc">Acumule pontos e seja reconhecido ao final da trilha 2027.</div></div>
+      </div>
+    </div>
+
+    <!-- TREINAMENTOS -->
+    <div class="card">
+      <div class="section-tag">📋 Treinamentos da Trilha 2027</div>
+      <div style="font-size:19px;font-weight:700;color:var(--dark);margin-bottom:4px;">Jornada de Capacitação</div>
+      <div style="font-size:13px;color:var(--gray-text);margin-bottom:24px;" id="trainingsCountLabel">6 capacitações técnicas planejadas para o ciclo 2027.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" id="trainingsOverview"></div>
+    </div>
+
+  </div>
+
+  <!-- ABA 2: MINHA JORNADA -->
+  <div class="tab-panel" id="tab-jornada">
+    <div class="privacy-notice">🔒 Você está visualizando apenas os seus dados. Suas respostas são privadas e visíveis somente para você e para a administradora.</div>
+
+    <div class="profile-card">
+      <div class="profile-avatar-lg" id="profileAvatar">--</div>
+      <div class="profile-info">
+        <div class="profile-greeting">Olá,</div>
+        <div class="profile-name" id="profileName">--</div>
+        <div class="profile-role" id="profileRole">--</div>
+        <div class="profile-stats">
+          <div class="profile-stat"><span class="profile-stat-value" id="profileCompleted">0</span><span class="profile-stat-label">Treinamentos</span></div>
+          <div class="profile-stat"><span class="profile-stat-value" id="profileAutoCount">0</span><span class="profile-stat-label">Autoaval.</span></div>
+          <div class="profile-stat"><span class="profile-stat-value" id="profileReacaoCount">0</span><span class="profile-stat-label">Reações</span></div>
+          <div class="profile-stat"><span class="profile-stat-value" id="profilePoints">0</span><span class="profile-stat-label">Pontos</span></div>
+        </div>
+      </div>
+      <div class="circular-progress">
+        <svg width="96" height="96" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="8"/>
+          <circle cx="50" cy="50" r="42" fill="none" stroke="white" stroke-width="8" stroke-dasharray="264" id="circleProgress" stroke-dashoffset="264" stroke-linecap="round"/>
+        </svg>
+        <div class="progress-text"><span class="progress-value" id="circlePercent">0%</span><span class="progress-sublabel">da trilha</span></div>
+      </div>
+    </div>
+
+    <div id="pendingAlert" style="background:rgba(250,100,32,0.05);border:1.5px solid rgba(250,100,32,0.18);border-radius:var(--radius);padding:14px 20px;margin-bottom:20px;display:none;align-items:center;gap:12px;">
+      <span style="font-size:22px;">⚡</span>
+      <div><div style="font-size:13px;font-weight:700;color:var(--orange);">Você tem etapas disponíveis!</div><div style="font-size:12px;color:var(--gray-text);margin-top:2px;">Clique em um treinamento abaixo para acessar suas etapas e acumular pontos.</div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div style="font-size:14px;font-weight:700;color:var(--dark);">📈 Progresso na Trilha 2027</div>
+        <span class="tag tag-blue" id="progressTag">0% concluído</span>
+      </div>
+      <div class="progress-bar-bg" style="height:12px;"><div class="progress-bar-fill" id="mainProgressBar" style="width:0%"></div></div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--gray-text);">
+        <span id="progressLabel">0 de 6 treinamentos concluídos</span>
+        <span id="progressPoints">0 / 0 pontos</span>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+      <span style="font-size:12px;font-weight:600;color:var(--gray-text);">Status:</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--success);font-weight:600;"><span style="width:10px;height:10px;border-radius:50%;background:var(--success);display:inline-block;"></span>Concluída</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--blue);font-weight:600;"><span style="width:10px;height:10px;border-radius:50%;background:var(--blue);display:inline-block;"></span>Disponível</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--warning);font-weight:600;"><span style="width:10px;height:10px;border-radius:50%;background:var(--warning);display:inline-block;"></span>Pendente</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--gray-text);font-weight:600;"><span style="width:10px;height:10px;border-radius:50%;background:var(--gray-mid);display:inline-block;"></span>Bloqueada</span>
+    </div>
+
+    <div style="font-size:13px;color:var(--gray-text);margin-bottom:16px;display:flex;align-items:center;gap:8px;">
+      <span style="font-size:16px;">👆</span>
+      <span>Clique em um treinamento para expandir e acessar suas etapas.</span>
+    </div>
+
+    <div id="accordionList"></div>
+  </div>
+
+  <!-- ABA 3: PONTUAÇÃO / RANKING -->
+  <div class="tab-panel" id="tab-pontuacao">
+    <div style="margin-bottom:24px;">
+      <div class="section-tag">⭐ Minha Evolução · 2027</div>
+      <div style="font-size:21px;font-weight:700;color:var(--dark);margin-bottom:20px;">Acompanhe sua pontuação</div>
+      <div class="grid-4" style="margin-bottom:20px;">
+        <div class="stat-card"><div class="stat-icon blue">⭐</div><div class="stat-value" id="myTotalPoints">0</div><div class="stat-label">Pontos acumulados</div><div class="stat-change neutral" id="myMaxPtsLabel">de 0 possíveis</div></div>
+        <div class="stat-card"><div class="stat-icon green">✅</div><div class="stat-value" id="myCompletedCount">0</div><div class="stat-label">Treinamentos concluídos</div><div class="stat-change neutral" id="myTotalLabel">de 6 no total</div></div>
+        <div class="stat-card"><div class="stat-icon purple">📝</div><div class="stat-value" id="myAutoCount">0</div><div class="stat-label">Autoavaliações feitas</div><div class="stat-change neutral">de 6 disponíveis</div></div>
+        <div class="stat-card"><div class="stat-icon orange">⭐</div><div class="stat-value" id="myReacaoCount">0</div><div class="stat-label">Av. de Reação feitas</div><div class="stat-change neutral" id="myReacaoAvail">de 0 disponíveis</div></div>
+      </div>
+      <div class="chart-wrapper" style="margin-bottom:24px;">
+        <div class="chart-title">📈 Evolução da Pontuação · 2027</div>
+        <div class="chart-container"><canvas id="myEvolutionChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div class="section-tag">🏆 Ranking · 2027</div>
+          <div style="font-size:19px;font-weight:700;color:var(--dark);">Ranking Geral · Trilha de Formação Técnica 2027</div>
+          <div style="font-size:12px;color:var(--gray-text);margin-top:4px;">Baseado em participação, assiduidade e conclusão das etapas.</div>
+        </div>
+        <div class="filter-bar" style="margin-bottom:0;">
+          <button class="filter-btn active" onclick="filterRanking('all',this)">Todos</button>
+          <button class="filter-btn" onclick="filterRanking('top',this)">Top 3</button>
+        </div>
+      </div>
+      <div style="background:rgba(5,115,250,0.04);border:1px solid rgba(5,115,250,0.1);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--blue);margin-bottom:16px;">
+        🔒 O ranking exibe apenas nome e pontuação. Respostas e dados individuais são privados.
+      </div>
+      <div style="display:flex;justify-content:center;gap:20px;margin-bottom:28px;flex-wrap:wrap;" id="podiumArea"></div>
+      <div style="overflow-x:auto;">
+        <table class="ranking-table">
+          <thead><tr><th style="width:60px;">Pos.</th><th>Colaborador</th><th>Treinamentos</th><th>Participação</th><th>Pontos</th></tr></thead>
+          <tbody id="rankingBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main-content -->
+
+<!-- FAB -->
+<button class="fab-add-training" id="fabAddTraining" onclick="openAddTraining()">
+  <span class="fab-icon">+</span>Novo Treinamento
+</button>
+<div class="admin-quick-bar" id="adminQuickBar">
+  <button class="admin-quick-btn" onclick="openAddCollab()"><span class="qb-dot" style="background:var(--blue);"></span>+ Novo Colaborador</button>
+  <button class="admin-quick-btn" onclick="openAdmin()"><span class="qb-dot" style="background:var(--orange);"></span>Abrir Painel Admin</button>
+</div>
+
+</div><!-- end app-wrapper -->
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-sidebar">
+    <button class="admin-close-btn" onclick="closeAdmin()">✕</button>
+    <div class="admin-logo-area">
+      <div class="admin-panel-main-title">Trilha de Formação Técnica<br>Manutenção</div>
+      <div class="admin-panel-sub">Área Administrativa · 2027</div>
+    </div>
+    <div class="admin-nav-item active" onclick="switchAdminSection('dashboard',this)">📊 Dashboard 2027</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('prontidao',this)">🎯 Prontidão Técnica</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('avaliacoes',this)">📝 Avaliações da Jornada</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('colaboradores',this)">👥 Colaboradores</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('treinamentos',this)">📋 Treinamentos</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('presenca',this)">✅ Registrar Presença</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('respostas',this)">💬 Respostas / Reflexões</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('ranking',this)">🏆 Ranking Completo</div>
+    <div class="admin-nav-item" onclick="switchAdminSection('configuracoes',this)">⚙️ Configurações</div>
+  </div>
+
+  <div class="admin-content">
+
+    <!-- DASHBOARD -->
+    <div class="admin-section active" id="admin-dashboard">
+      <div class="admin-header">
+        <div><div class="admin-title">📊 Dashboard · 2027</div><div style="font-size:12px;color:var(--gray-text);">Indicadores gerais da Trilha de Formação Técnica 2027</div></div>
+        <div class="admin-badge">🔐 Admin</div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <div class="prontidao-card" onclick="switchAdminSection('prontidao',document.querySelector('.admin-nav-item:nth-child(2)'))" id="dashProntidaoCard">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+            <div style="flex:1;">
+              <div class="prontidao-label">🎯 Prontidão Técnica</div>
+              <div class="prontidao-value" id="dashProntidaoValue">0%</div>
+              <div class="prontidao-desc">Percentual de evolução na jornada de formação, considerando as etapas de desenvolvimento e conclusão dos treinamentos.</div>
+              <div style="font-size:11px;opacity:0.7;margin-top:8px;">Clique para ver o detalhamento completo →</div>
+            </div>
+            <div style="flex:1;min-width:200px;">
+              <div class="prontidao-mini-bars">
+                <div class="prontidao-mini-row"><span class="prontidao-mini-label">Autoavaliação (20%)</span><div class="prontidao-mini-bar-bg"><div class="prontidao-mini-bar-fill" id="miniBarAuto" style="width:0%"></div></div><span class="prontidao-mini-val" id="miniValAuto">0%</span></div>
+                <div class="prontidao-mini-row"><span class="prontidao-mini-label">Participação (30%)</span><div class="prontidao-mini-bar-bg"><div class="prontidao-mini-bar-fill" id="miniBarPart" style="width:0%"></div></div><span class="prontidao-mini-val" id="miniValPart">0%</span></div>
+                <div class="prontidao-mini-row"><span class="prontidao-mini-label">Av. de Reação (20%)</span><div class="prontidao-mini-bar-bg"><div class="prontidao-mini-bar-fill" id="miniBarReac" style="width:0%"></div></div><span class="prontidao-mini-val" id="miniValReac">0%</span></div>
+                <div class="prontidao-mini-row"><span class="prontidao-mini-label">Reflexão (30%)</span><div class="prontidao-mini-bar-bg"><div class="prontidao-mini-bar-fill" id="miniBarRefl" style="width:0%"></div></div><span class="prontidao-mini-val" id="miniValRefl">0%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4" style="margin-bottom:20px;">
+        <div class="stat-card"><div class="stat-icon blue">👥</div><div class="stat-value" id="adminTotalCollab">0</div><div class="stat-label">Total de participantes</div></div>
+        <div class="stat-card"><div class="stat-icon green">✅</div><div class="stat-value" id="adminTotalParticipations">0</div><div class="stat-label">Participações registradas</div></div>
+        <div class="stat-card"><div class="stat-icon orange">📊</div><div class="stat-value" id="adminAvgParticipation">0%</div><div class="stat-label">Média de participação</div></div>
+        <div class="stat-card"><div class="stat-icon purple">⭐</div><div class="stat-value" id="adminTotalPoints">0</div><div class="stat-label">Total de pontos distribuídos</div></div>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-wrapper"><div class="chart-title">📋 Participação por Treinamento · 2027</div><div class="chart-container"><canvas id="adminParticipationChart"></canvas></div></div>
+        <div class="chart-wrapper"><div class="chart-title">🏆 Pontuação por Colaborador · 2027</div><div class="chart-container"><canvas id="adminPointsChart"></canvas></div></div>
+      </div>
+      <div class="grid-2" style="margin-top:20px;">
+        <div class="card-sm">
+          <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:16px;">📈 Indicadores 2027</div>
+          <div class="indicator-row"><span class="indicator-label">Total de treinamentos</span><span class="indicator-value" id="adminTotalTrainings">6</span></div>
+          <div class="indicator-row"><span class="indicator-label">Média de pontuação</span><span class="indicator-value" id="adminAvgPoints">0 pts</span></div>
+          <div class="indicator-row"><span class="indicator-label">Colabs. com 100% participação</span><span class="indicator-value" id="adminFullParticipation">0</span></div>
+          <div class="indicator-row"><span class="indicator-label">% médio de conclusão</span><span class="indicator-value" id="adminTrailCompletion">0%</span></div>
+          <div class="indicator-row"><span class="indicator-label">% reflexões preenchidas</span><span class="indicator-value" id="adminResponseRate">0%</span></div>
+          <div class="indicator-row"><span class="indicator-label">Maior participação</span><span class="indicator-value" id="adminBestTraining">—</span></div>
+          <div class="indicator-row"><span class="indicator-label">Menor participação</span><span class="indicator-value" id="adminWorstTraining">—</span></div>
+        </div>
+        <div class="card-sm">
+          <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:16px;">🏆 Top Participantes 2027</div>
+          <div id="adminTopCollab"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRONTIDÃO TÉCNICA -->
+    <div class="admin-section" id="admin-prontidao">
+      <div class="admin-header">
+        <div><div class="admin-title">🎯 Prontidão Técnica · 2027</div><div style="font-size:12px;color:var(--gray-text);">Nível de conclusão e preparação dos colaboradores ao longo da trilha</div></div>
+        <div class="admin-badge">🔐 Admin</div>
+      </div>
+      <div class="grid-4" style="margin-bottom:20px;">
+        <div class="stat-card" style="border:2px solid rgba(5,115,250,0.15);"><div class="stat-icon blue">🎯</div><div class="stat-value" id="prontidaoGeral">0%</div><div class="stat-label">Prontidão Técnica Geral</div><div class="stat-change neutral">média de todos os colaboradores</div></div>
+        <div class="stat-card"><div class="stat-icon purple">📝</div><div class="stat-value" id="prontidaoAutoVal">0%</div><div class="stat-label">Conclusão — Autoavaliação</div><div class="stat-change neutral">peso: 20%</div></div>
+        <div class="stat-card"><div class="stat-icon green">✅</div><div class="stat-value" id="prontidaoPartVal">0%</div><div class="stat-label">Conclusão — Participação</div><div class="stat-change neutral">peso: 30%</div></div>
+        <div class="stat-card"><div class="stat-icon orange">⭐</div><div class="stat-value" id="prontidaoReacVal">0%</div><div class="stat-label">Conclusão — Av. de Reação</div><div class="stat-change neutral">peso: 20%</div></div>
+      </div>
+      <div class="card" style="margin-bottom:20px;">
+        <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:12px;">📐 Como é calculada a Prontidão Técnica?</div>
+        <div style="font-size:13px;color:var(--gray-text);line-height:1.7;margin-bottom:16px;">A Prontidão Técnica considera o progresso completo da jornada, incluindo todas as 4 etapas de cada treinamento. Cada etapa tem um peso proporcional à sua importância no desenvolvimento.</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+          <div style="background:rgba(139,92,246,0.08);border-radius:10px;padding:14px;text-align:center;border:1px solid rgba(139,92,246,0.15);"><div style="font-size:22px;font-weight:800;color:var(--purple);">20%</div><div style="font-size:11px;font-weight:700;color:var(--dark);margin-top:4px;">Autoavaliação</div></div>
+          <div style="background:rgba(34,197,94,0.08);border-radius:10px;padding:14px;text-align:center;border:1px solid rgba(34,197,94,0.15);"><div style="font-size:22px;font-weight:800;color:var(--success);">30%</div><div style="font-size:11px;font-weight:700;color:var(--dark);margin-top:4px;">Participação</div></div>
+          <div style="background:rgba(250,100,32,0.08);border-radius:10px;padding:14px;text-align:center;border:1px solid rgba(250,100,32,0.15);"><div style="font-size:22px;font-weight:800;color:var(--orange);">20%</div><div style="font-size:11px;font-weight:700;color:var(--dark);margin-top:4px;">Av. de Reação</div></div>
+          <div style="background:rgba(5,115,250,0.08);border-radius:10px;padding:14px;text-align:center;border:1px solid rgba(5,115,250,0.15);"><div style="font-size:22px;font-weight:800;color:var(--blue);">30%</div><div style="font-size:11px;font-weight:700;color:var(--dark);margin-top:4px;">Reflexão</div></div>
+        </div>
+      </div>
+      <div class="chart-wrapper" style="margin-bottom:20px;">
+        <div class="chart-title">🎯 Prontidão Técnica por Colaborador</div>
+        <div class="chart-container"><canvas id="prontidaoChart"></canvas></div>
+      </div>
+      <div class="card" style="margin-bottom:20px;">
+        <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:16px;">👥 Prontidão por Colaborador</div>
+        <div style="overflow-x:auto;">
+          <table class="ranking-table">
+            <thead><tr><th>Colaborador</th><th>Autoaval. (20%)</th><th>Participação (30%)</th><th>Av. Reação (20%)</th><th>Reflexão (30%)</th><th>Etapas Concluídas</th><th>Prontidão Técnica</th></tr></thead>
+            <tbody id="prontidaoCollabBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:16px;">📋 Prontidão por Treinamento</div>
+        <div style="overflow-x:auto;">
+          <table class="ranking-table">
+            <thead><tr><th>#</th><th>Treinamento</th><th>Autoaval.</th><th>Participação</th><th>Av. Reação</th><th>Reflexão</th><th>Prontidão</th></tr></thead>
+            <tbody id="prontidaoTrainingBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVALIAÇÕES -->
+    <div class="admin-section" id="admin-avaliacoes">
+      <div class="admin-header">
+        <div><div class="admin-title">📝 Avaliações da Jornada · 2027</div><div style="font-size:12px;color:var(--gray-text);">Autoavaliações e Avaliações de Reação por treinamento</div></div>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <label style="font-size:13px;font-weight:600;">Treinamento:</label>
+          <select class="training-filter-select" id="avalTrainingFilter" onchange="renderAvaliacoesDashboard()"><option value="all">Todos os treinamentos</option></select>
+        </div>
+      </div>
+      <div class="grid-4" style="margin-bottom:20px;">
+        <div class="stat-card"><div class="stat-icon purple">📝</div><div class="stat-value" id="avalAutoTotal">0</div><div class="stat-label">Autoavaliações concluídas</div><div class="stat-change neutral" id="avalAutoPct">0% do total</div></div>
+        <div class="stat-card"><div class="stat-icon orange">⭐</div><div class="stat-value" id="avalReacaoTotal">0</div><div class="stat-label">Av. de Reação concluídas</div><div class="stat-change neutral" id="avalReacaoPct">0% dos presentes</div></div>
+        <div class="stat-card"><div class="stat-icon blue">📊</div><div class="stat-value" id="avalAutoMedia">—</div><div class="stat-label">Média Autoavaliação (1-5)</div><div class="stat-change neutral">conhecimento prévio</div></div>
+        <div class="stat-card"><div class="stat-icon green">📊</div><div class="stat-value" id="avalReacaoMedia">—</div><div class="stat-label">Média Av. de Reação (1-5)</div><div class="stat-change neutral">percepção pós-treinamento</div></div>
+      </div>
+      <div class="aval-section" style="margin-bottom:20px;">
+        <div class="aval-section-title">🔄 Comparativo: Conhecimento Antes × Percepção Após</div>
+        <div class="aval-section-sub">Diferença entre a autoavaliação (antes) e a avaliação de reação (após) por treinamento.</div>
+        <div id="avalComparativoContainer"></div>
+      </div>
+      <div class="charts-grid" style="margin-bottom:20px;">
+        <div class="chart-wrapper"><div class="chart-title">📝 Autoavaliações por Treinamento</div><div class="chart-container"><canvas id="avalAutoChart"></canvas></div></div>
+        <div class="chart-wrapper"><div class="chart-title">⭐ Avaliações de Reação por Treinamento</div><div class="chart-container"><canvas id="avalReacaoChart"></canvas></div></div>
+      </div>
+      <div class="card">
+        <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:16px;">📋 Detalhamento por Treinamento</div>
+        <div style="overflow-x:auto;">
+          <table class="ranking-table">
+            <thead><tr><th>#</th><th>Treinamento</th><th>Presentes</th><th>Autoaval.</th><th>Média Auto</th><th>Av. Reação</th><th>Média Reação</th><th>Evolução</th><th>Pts Gerados</th></tr></thead>
+            <tbody id="avalDetalheBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLABORADORES -->
+    <div class="admin-section" id="admin-colaboradores">
+      <div class="admin-header">
+        <div><div class="admin-title">👥 Colaboradores</div><div style="font-size:12px;color:var(--gray-text);">Gerencie os participantes da trilha 2027</div></div>
+        <button class="btn btn-primary" onclick="openAddCollab()">+ Adicionar Colaborador</button>
+      </div>
+      <div class="card"><div id="collabListAdmin"></div></div>
+    </div>
+
+    <!-- TREINAMENTOS -->
+    <div class="admin-section" id="admin-treinamentos">
+      <div class="admin-header">
+        <div><div class="admin-title">📋 Treinamentos 2027</div><div style="font-size:12px;color:var(--gray-text);">Gerencie e edite os treinamentos da trilha</div></div>
+        <button class="btn btn-primary" onclick="openAddTraining()">+ Novo Treinamento</button>
+      </div>
+      <div class="card"><div id="trainingListAdmin"></div></div>
+    </div>
+
+    <!-- PRESENÇA -->
+    <div class="admin-section" id="admin-presenca">
+      <div class="admin-header">
+        <div><div class="admin-title">✅ Registrar Presença</div><div style="font-size:12px;color:var(--gray-text);">Ao marcar "Participou", a Av. de Reação é liberada automaticamente.</div></div>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <label style="font-size:13px;font-weight:600;">Treinamento:</label>
+          <select class="training-filter-select" id="adminTrainingFilter" onchange="renderPresenceTable()"></select>
+        </div>
+      </div>
+      <div class="card">
+        <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--teal);margin-bottom:16px;">
+          ✅ Ao marcar <strong>"Participou"</strong>, a <strong>Avaliação de Reação</strong> será liberada automaticamente para o colaborador.
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="presence-table">
+            <thead><tr><th>Colaborador</th><th>E-mail</th><th>Cargo</th><th>Participação</th><th>Autoaval.</th><th>Av. Reação</th><th>Reflexão</th><th>Pts</th></tr></thead>
+            <tbody id="presenceBody"></tbody>
+          </table>
+        </div>
+        <div style="margin-top:16px;display:flex;justify-content:flex-end;">
+          <button class="btn btn-primary" onclick="savePresence()">💾 Salvar Presenças</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESPOSTAS -->
+    <div class="admin-section" id="admin-respostas">
+      <div class="admin-header">
+        <div><div class="admin-title">💬 Respostas e Reflexões</div><div style="font-size:12px;color:var(--gray-text);">Visualize todas as respostas dos colaboradores · 2027</div></div>
+      </div>
+      <div class="card" style="margin-bottom:20px;">
+        <div class="admin-form-grid" style="margin-bottom:0;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" style="font-size:12px;">Colaborador</label>
+            <select class="training-filter-select" id="adminResponseCollabFilter" onchange="renderResponsesAdmin()" style="width:100%;"></select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" style="font-size:12px;">Treinamento</label>
+            <select class="training-filter-select" id="adminResponseFilter" onchange="renderResponsesAdmin()" style="width:100%;"><option value="all">Todos os treinamentos</option></select>
+          </div>
+        </div>
+      </div>
+      <div id="responsesContainer"></div>
+    </div>
+
+    <!-- RANKING ADMIN -->
+    <div class="admin-section" id="admin-ranking">
+      <div class="admin-header">
+        <div><div class="admin-title">🏆 Ranking Completo · 2027</div><div style="font-size:12px;color:var(--gray-text);">Classificação completa com todos os dados</div></div>
+      </div>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table class="ranking-table">
+            <thead><tr><th>Pos.</th><th>Colaborador</th><th>E-mail</th><th>Cargo</th><th>Treinamentos</th><th>Autoaval.</th><th>Reações</th><th>Reflexões</th><th>Prontidão</th><th>Pontos</th><th>Status</th></tr></thead>
+            <tbody id="adminRankingBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFIGURAÇÕES -->
+    <div class="admin-section" id="admin-configuracoes">
+      <div class="admin-header">
+        <div><div class="admin-title">⚙️ Configurações</div><div style="font-size:12px;color:var(--gray-text);">Personalize as regras da trilha 2027</div></div>
+      </div>
+      <div class="card" style="margin-bottom:20px;">
+        <div style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;">🏅 Sistema de Pontuação</div>
+        <div style="font-size:13px;color:var(--gray-text);margin-bottom:16px;">Configure os pontos atribuídos por cada etapa da trilha.</div>
+        <div class="points-config-grid">
+          <div class="points-config-item"><div class="points-config-label">Autoavaliação</div><input type="number" class="points-config-input" id="configPtsAuto" value="3" min="0" max="100" onchange="updatePointsConfig()"></div>
+          <div class="points-config-item"><div class="points-config-label">Participação</div><input type="number" class="points-config-input" id="configPtsParticipacao" value="10" min="0" max="100" onchange="updatePointsConfig()"></div>
+          <div class="points-config-item"><div class="points-config-label">Av. de Reação</div><input type="number" class="points-config-input" id="configPtsReacao" value="4" min="0" max="100" onchange="updatePointsConfig()"></div>
+          <div class="points-config-item" style="border:2px solid rgba(250,100,32,0.15);"><div class="points-config-label">Reflexão</div><input type="number" class="points-config-input" id="configPtsReflexao" value="5" min="0" max="100" onchange="updatePointsConfig()"></div>
+        </div>
+        <div style="margin-top:12px;background:var(--light-bg);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--gray-text);">
+          Total máximo por treinamento: <strong id="configPtsTotal" style="color:var(--orange);">22 pts</strong>
+        </div>
+        <div style="margin-top:16px;display:flex;justify-content:flex-end;">
+          <button class="btn btn-orange" onclick="savePointsConfig()">💾 Salvar Configurações</button>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;">ℹ️ Sobre a Ferramenta</div>
+        <div style="font-size:13px;color:var(--gray-text);line-height:1.8;">
+          <p>Trilha de Formação Técnica 2027 — Time de Manutenção.</p>
+          <p style="margin-top:8px;">Para integração com sistemas corporativos, conecte a um backend como Google Sheets + Apps Script ou sistema interno.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL: Autoavaliação -->
+<div class="modal-overlay" id="modalAutoaval">
+  <div class="modal">
+    <div id="modalAutoavalContent">
+      <div class="modal-header"><div class="modal-title">📝 Autoavaliação</div><button class="modal-close" onclick="closeModal('modalAutoaval')">✕</button></div>
+      <div class="modal-training-badge" id="modalAutoTrainingName"></div>
+      <div class="modal-training-meta"><span>⏱️ <span id="modalAutoCH"></span></span><span>👤 <span id="modalAutoInstructor"></span></span></div>
+      <div style="background:rgba(5,115,250,0.05);border:1px solid rgba(5,115,250,0.15);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--blue);margin-bottom:20px;">
+        📝 Avalie seu nível de conhecimento atual. Escala: <strong>1 = Não tenho conhecimento</strong> → <strong>5 = Domínio do tema</strong>
+      </div>
+      <div class="modal-progress"><span id="autoProgressText">0 de 5 respondidas</span><div class="modal-progress-bar"><div class="modal-progress-fill" id="autoProgressFill" style="width:0%"></div></div><span id="autoProgressPct">0%</span></div>
+      <div id="autoQuestionsContainer"></div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:16px;">
+        <button class="btn btn-ghost" onclick="closeModal('modalAutoaval')">Cancelar</button>
+        <button class="btn btn-primary btn-lg" onclick="submitAutoaval()">📤 Enviar Autoavaliação</button>
+      </div>
+    </div>
+    <div id="modalAutoavalSuccess" style="display:none;">
+      <div class="modal-success">
+        <div class="modal-success-icon">📝</div>
+        <div class="modal-success-title">Autoavaliação concluída!</div>
+        <div class="modal-success-sub">Sua autoavaliação foi registrada com sucesso.<br><strong id="autoSuccessPts" style="color:var(--blue);"></strong> adicionados à sua pontuação.</div>
+        <div style="margin-top:20px;"><button class="btn btn-primary" onclick="closeModal('modalAutoaval')">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Avaliação de Reação -->
+<div class="modal-overlay" id="modalReacao">
+  <div class="modal">
+    <div id="modalReacaoContent">
+      <div class="modal-header"><div class="modal-title">⭐ Avaliação de Reação</div><button class="modal-close" onclick="closeModal('modalReacao')">✕</button></div>
+      <div class="modal-training-badge" id="modalReacaoTrainingName"></div>
+      <div class="modal-training-meta"><span>⏱️ <span id="modalReacaoCH"></span></span><span>👤 <span id="modalReacaoInstructor"></span></span></div>
+      <div style="background:rgba(250,100,32,0.05);border:1px solid rgba(250,100,32,0.2);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--orange);margin-bottom:20px;">
+        ⭐ Avalie sua percepção sobre o treinamento. Escala: <strong>1 = Discordo totalmente</strong> → <strong>5 = Concordo totalmente</strong>
+      </div>
+      <div class="modal-progress"><span id="reacaoProgressText">0 de 5 respondidas</span><div class="modal-progress-bar"><div class="modal-progress-fill" id="reacaoProgressFill" style="width:0%;background:var(--orange);"></div></div><span id="reacaoProgressPct">0%</span></div>
+      <div id="reacaoQuestionsContainer"></div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:16px;">
+        <button class="btn btn-ghost" onclick="closeModal('modalReacao')">Cancelar</button>
+        <button class="btn btn-orange btn-lg" onclick="submitReacao()">📤 Enviar Avaliação de Reação</button>
+      </div>
+    </div>
+    <div id="modalReacaoSuccess" style="display:none;">
+      <div class="modal-success">
+        <div class="modal-success-icon">⭐</div>
+        <div class="modal-success-title">Avaliação de Reação concluída!</div>
+        <div class="modal-success-sub">Sua avaliação foi registrada com sucesso.<br><strong id="reacaoSuccessPts" style="color:var(--orange);"></strong> adicionados à sua pontuação.</div>
+        <div style="margin-top:20px;"><button class="btn btn-primary" onclick="closeModal('modalReacao')">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Reflexão -->
+<div class="modal-overlay" id="modalReflection">
+  <div class="modal">
+    <div id="modalReflectionContent">
+      <div class="modal-header"><div class="modal-title">✍️ Reflexão sobre o Treinamento</div><button class="modal-close" onclick="closeModal('modalReflection')">✕</button></div>
+      <div class="modal-training-badge" id="modalTrainingName"></div>
+      <div class="modal-training-meta"><span>⏱️ <span id="modalTrainingCH"></span></span><span>👤 <span id="modalTrainingInstructor"></span></span><span>🙋 <span id="modalCollabName"></span></span></div>
+      <div class="form-group">
+        <label class="form-label">1. O que você achou do treinamento? <span class="required">*</span></label>
+        <textarea class="form-textarea" id="modalQ1" placeholder="Compartilhe sua percepção sobre o treinamento, pontos positivos, sugestões..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">2. O que você aprendeu e como pretende aplicar no seu trabalho? <span class="required">*</span></label>
+        <textarea class="form-textarea" id="modalQ2" placeholder="Descreva o principal aprendizado e como pretende aplicar os conhecimentos adquiridos..."></textarea>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:8px;">
+        <button class="btn btn-ghost" onclick="closeModal('modalReflection')">Cancelar</button>
+        <button class="btn btn-orange btn-lg" onclick="submitReflection()">📤 Enviar Reflexão</button>
+      </div>
+    </div>
+    <div id="modalReflectionSuccess" style="display:none;">
+      <div class="modal-success">
+        <div class="modal-success-icon">✅</div>
+        <div class="modal-success-title">Reflexão enviada com sucesso!</div>
+        <div class="modal-success-sub">Sua reflexão foi registrada e vinculada ao seu e-mail.<br>Sua pontuação foi atualizada automaticamente.</div>
+        <div style="margin-top:20px;"><button class="btn btn-primary" onclick="closeModal('modalReflection')">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Novo / Editar Treinamento -->
+<div class="modal-overlay" id="modalAddTraining">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTrainingTitle">📋 Novo Treinamento</div>
+      <button class="modal-close" onclick="closeModal('modalAddTraining')">✕</button>
+    </div>
+    <div style="background:rgba(5,115,250,0.04);border:1px solid rgba(5,115,250,0.12);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--blue);margin-bottom:20px;" id="modalTrainingHint">
+      ℹ️ Preencha: <strong>nome</strong>, <strong>carga horária</strong>, <strong>instrutor(es)</strong> e <strong>data</strong>. A data controla a liberação da Autoavaliação.
+    </div>
+    <div class="form-group"><label class="form-label">Nome do treinamento <span class="required">*</span></label><input type="text" class="form-input" id="newTrainingName" placeholder="Ex: Inspeção Baseada em Risco (RBI)"></div>
+    <div class="admin-form-grid">
+      <div class="form-group"><label class="form-label">Carga horária <span class="required">*</span></label><input type="text" class="form-input" id="newTrainingCH" placeholder="Ex: 8h"></div>
+      <div class="form-group"><label class="form-label">Instrutor(es) <span class="required">*</span></label><input type="text" class="form-input" id="newTrainingInstructor" placeholder="Ex: Emerson Mota"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Data do treinamento <span class="required">*</span></label><input type="date" class="form-input" id="newTrainingDate"></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px;">
+      <button class="btn btn-ghost" onclick="closeModal('modalAddTraining')">Cancelar</button>
+      <button class="btn btn-primary" id="btnSaveTraining">✅ Salvar Treinamento</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Adicionar Colaborador -->
+<div class="modal-overlay" id="modalAddCollab">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">👤 Colaborador</div><button class="modal-close" onclick="closeModal('modalAddCollab')">✕</button></div>
+    <div class="admin-form-grid">
+      <div class="form-group"><label class="form-label">Nome completo <span class="required">*</span></label><input type="text" class="form-input" id="newCollabName" placeholder="Ex: João Silva"></div>
+      <div class="form-group"><label class="form-label">E-mail corporativo <span class="required">*</span></label><input type="email" class="form-input" id="newCollabEmail" placeholder="joao.silva@acelen.com.br"></div>
+    </div>
+    <div class="admin-form-grid">
+      <div class="form-group"><label class="form-label">Cargo <span class="required">*</span></label><input type="text" class="form-input" id="newCollabRole" placeholder="Ex: Técnico de Manutenção"></div>
+      <div class="form-group"><label class="form-label">Área</label><input type="text" class="form-input" id="newCollabArea" value="Manutenção"></div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Perfil de acesso</label>
+      <select class="form-input" id="newCollabAccess" style="cursor:pointer;"><option value="colaborador">Colaborador</option><option value="admin">Administradora</option></select>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px;">
+      <button class="btn btn-ghost" onclick="closeModal('modalAddCollab')">Cancelar</button>
+      <button class="btn btn-primary" id="btnSaveCollab" onclick="addCollab()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+const TRAIL_YEAR = 2027;
+const PRONTIDAO_WEIGHTS = { auto: 0.20, participacao: 0.30, reacao: 0.20, reflexao: 0.30 };
+
+const AUTO_QUESTIONS = {
+  0: ["Como você avalia seu conhecimento sobre os fundamentos da Inspeção Baseada em Risco (RBI)?","Como você avalia sua capacidade de identificar e classificar riscos em equipamentos industriais?","Como você avalia seu conhecimento sobre metodologias de avaliação de probabilidade de falha?","Como você avalia sua familiaridade com as normas aplicáveis à RBI (ex: API 580/581)?","Como você avalia sua capacidade de elaborar planos de inspeção baseados em risco?"],
+  1: ["Como você avalia seu conhecimento sobre o conceito de Dispositivos Técnicos de Reparos Temporários (DTPs)?","Como você avalia sua familiaridade com os tipos de DTPs utilizados em manutenção industrial?","Como você avalia seu conhecimento sobre os critérios de aplicação e limitações dos DTPs?","Como você avalia sua capacidade de identificar situações que requerem o uso de DTPs?","Como você avalia seu conhecimento sobre os procedimentos de gestão e controle de DTPs?"],
+  2: ["Como você avalia seu conhecimento sobre os principais componentes de uma ligação flangeada?","Como você avalia seu conhecimento sobre procedimentos de aperto e torque em flanges?","Como você avalia sua capacidade de identificar possíveis riscos de vazamento em ligações flangeadas?","Como você avalia seu conhecimento sobre os tipos de gaxetas e sua aplicação correta?","Como você avalia sua familiaridade com as normas de inspeção e manutenção de flanges?"],
+  3: ["Como você avalia seu conhecimento sobre os principais processos de fabricação metálica?","Como você avalia sua compreensão sobre as propriedades mecânicas dos materiais metálicos?","Como você avalia seu conhecimento sobre os efeitos dos processos de fabricação nas propriedades dos materiais?","Como você avalia sua capacidade de identificar defeitos relacionados ao processo de fabricação?","Como você avalia seu conhecimento sobre metalurgia aplicada à manutenção industrial?"],
+  4: ["Como você avalia seu conhecimento sobre os princípios de funcionamento dos trocadores de calor?","Como você avalia sua familiaridade com os diferentes tipos de trocadores de calor?","Como você avalia seu conhecimento sobre os principais modos de falha em trocadores de calor?","Como você avalia sua capacidade de realizar inspeção e diagnóstico em trocadores de calor?","Como você avalia seu conhecimento sobre procedimentos de limpeza e manutenção de trocadores?"],
+  5: ["Como você avalia seu conhecimento sobre os principais processos de soldagem utilizados na manutenção?","Como você avalia sua capacidade de interpretar símbolos e especificações de soldagem?","Como você avalia seu conhecimento sobre os critérios de aceitação e rejeição de soldas?","Como você avalia sua familiaridade com os ensaios não destrutivos aplicados à inspeção de soldas?","Como você avalia seu conhecimento sobre os defeitos mais comuns em soldas e suas causas?"]
+};
+
+const REACAO_QUESTIONS = {
+  0: ["O conteúdo sobre RBI foi relevante para minha atividade de manutenção e inspeção.","O treinamento ampliou minha compreensão sobre como priorizar inspeções com base em risco.","A abordagem prática utilizada facilitou o entendimento da metodologia RBI.","A instrutora apresentou o conteúdo de forma clara e objetiva.","Sinto-me mais preparado(a) para aplicar os conceitos de RBI no meu trabalho."],
+  1: ["O conteúdo sobre gestão de DTPs foi relevante para minha atividade.","O treinamento contribuiu para ampliar meu conhecimento sobre reparos temporários.","Os exemplos práticos apresentados facilitaram o entendimento do tema.","Os instrutores apresentaram o conteúdo de forma clara e objetiva.","Sinto-me mais preparado(a) para identificar e gerir DTPs corretamente."],
+  2: ["O conteúdo sobre ligações flangeadas foi relevante para minha atividade.","O treinamento contribuiu para ampliar meu conhecimento sobre montagem e inspeção de flanges.","A abordagem utilizada facilitou o entendimento dos procedimentos de torque e aperto.","O instrutor apresentou o conteúdo de forma clara e objetiva.","Sinto-me mais preparado(a) para executar e inspecionar ligações flangeadas com segurança."],
+  3: ["O conteúdo sobre processos de fabricação e metalurgia foi relevante para minha atividade.","O treinamento contribuiu para ampliar meu entendimento sobre as propriedades dos materiais.","A abordagem utilizada facilitou a compreensão dos conceitos de metalurgia aplicada.","O instrutor apresentou o conteúdo de forma clara e objetiva.","Sinto-me mais preparado(a) para identificar falhas relacionadas a processos de fabricação."],
+  4: ["O conteúdo sobre trocadores de calor foi relevante para minha atividade de manutenção.","O treinamento contribuiu para ampliar meu conhecimento sobre os modos de falha em trocadores.","A abordagem utilizada facilitou o entendimento dos procedimentos de manutenção.","O instrutor apresentou o conteúdo de forma clara e objetiva.","Sinto-me mais preparado(a) para inspecionar e manter trocadores de calor."],
+  5: ["O conteúdo sobre soldagem foi relevante para minha atividade de manutenção e inspeção.","O treinamento contribuiu para ampliar meu conhecimento sobre execução e inspeção de soldas.","A abordagem utilizada facilitou o entendimento dos critérios de qualidade em soldagem.","Os instrutores apresentaram o conteúdo de forma clara e objetiva.","Sinto-me mais preparado(a) para inspecionar e avaliar a qualidade de soldas."]
+};
+
+let appData = {
+  pointsConfig: { auto: 3, participacao: 10, reacao: 4, reflexao: 5 },
+  currentUserEmail: null,
+  collaborators: [
+    { id:0, name:'Carlos Andrade',    email:'carlos.andrade@acelen.com.br',   role:'Técnico de Manutenção',     area:'Manutenção', initials:'CA', color:'#0573FA', access:'colaborador' },
+    { id:1, name:'Fernanda Lima',     email:'fernanda.lima@acelen.com.br',    role:'Engenheira de Manutenção',  area:'Manutenção', initials:'FL', color:'#FA6420', access:'colaborador' },
+    { id:2, name:'Roberto Santos',    email:'roberto.santos@acelen.com.br',   role:'Mecânico Industrial',       area:'Manutenção', initials:'RS', color:'#22C55E', access:'colaborador' },
+    { id:3, name:'Ana Beatriz Costa', email:'ana.costa@acelen.com.br',        role:'Técnica de Confiabilidade', area:'Manutenção', initials:'AB', color:'#8B5CF6', access:'colaborador' },
+    { id:4, name:'Marcos Oliveira',   email:'marcos.oliveira@acelen.com.br',  role:'Eletricista Industrial',    area:'Manutenção', initials:'MO', color:'#F59E0B', access:'colaborador' },
+    { id:5, name:'Juliana Ferreira',  email:'juliana.ferreira@acelen.com.br', role:'Técnica de Inspeção',       area:'Manutenção', initials:'JF', color:'#EF4444', access:'colaborador' },
+    { id:6, name:'Pedro Alves',       email:'pedro.alves@acelen.com.br',      role:'Mecânico de Utilidades',    area:'Manutenção', initials:'PA', color:'#06B6D4', access:'colaborador' },
+    { id:7, name:'Mylla Farias',      email:'mfarias@acelen.com',             role:'Gestora de T&D',            area:'RH',         initials:'MF', color:'#0573FA', access:'admin'       }
+  ],
+  trainings: [
+    { id:0, name:'Inspeção Baseada em Risco (RBI)',                              cargaHoraria:'24h — 16h virtual + 8h presencial', instrutor:'Fernanda Monteiro / ISQ',          date:'2027-02-10' },
+    { id:1, name:'Gestão de Dispositivos Técnicos de Reparos Temporários (DTPs)', cargaHoraria:'4h',                               instrutor:'Rodrigo e Emerson',                date:'2027-03-05' },
+    { id:2, name:'Ligações Flangeadas',                                           cargaHoraria:'4h',                               instrutor:'Emerson Mota',                     date:'2027-04-15' },
+    { id:3, name:'Processos de Fabricação: Metalurgia e Propriedades',            cargaHoraria:'4h',                               instrutor:'Manoel Carreira',                  date:'2027-05-20' },
+    { id:4, name:'Trocadores de Calor',                                           cargaHoraria:'8h',                               instrutor:'Emerson Mota',                     date:'2027-06-10' },
+    { id:5, name:'Soldagem: Execução e Inspeção',                                 cargaHoraria:'4h',                               instrutor:'Rafael Barreto / Manoel Carreira', date:'2027-07-08' }
+  ],
+  presence: {
+    'carlos.andrade@acelen.com.br':   { 0:'participated', 1:'pending', 2:'pending', 3:'pending', 4:'pending', 5:'pending' },
+    'fernanda.lima@acelen.com.br':    { 0:'participated', 1:'participated', 2:'pending', 3:'pending', 4:'pending', 5:'pending' },
+    'roberto.santos@acelen.com.br':   { 0:'pending', 1:'pending', 2:'pending', 3:'pending', 4:'pending', 5:'pending' },
+    'ana.costa@acelen.com.br':        { 0:'participated', 1:'pending', 2:'pending', 3:'pending', 4:'pending', 5:'pending' },
+    'marcos.oliveira@acelen.com.br':  { 0:'pending', 1:'pending', 2:'pending', 3:'pending', 4:'pending', 5:'pending' },
+    'juliana.ferreira@acelen.com.br': { 0:'pending', 1:'pending', 2:'pending', 3:'pending', 4:'pending', 5:'pending' },
+    'pedro.alves@acelen.com.br':      { 0:'participated', 1:'pending', 2:'pending', 3:'pending', 4:'pending', 5:'pending' }
+  },
+  autoaval: {
+    'carlos.andrade@acelen.com.br': { 0: { answers:[4,3,4,3,3], media:3.4, savedAt:'10/02/2027 08:30' } },
+    'fernanda.lima@acelen.com.br':  { 0: { answers:[5,4,5,4,4], media:4.4, savedAt:'10/02/2027 08:15' }, 1: { answers:[3,3,2,3,3], media:2.8, savedAt:'05/03/2027 08:20' } }
+  },
+  reacao: {
+    'carlos.andrade@acelen.com.br': { 0: { answers:[5,5,4,5,5], media:4.8, savedAt:'10/02/2027 17:00' } },
+    'fernanda.lima@acelen.com.br':  { 0: { answers:[5,5,5,5,4], media:4.8, savedAt:'10/02/2027 17:10' }, 1: { answers:[4,4,4,5,4], media:4.2, savedAt:'05/03/2027 17:00' } }
+  },
+  responses: {
+    'carlos.andrade@acelen.com.br': { 0: { q1:'Excelente treinamento! Muito bem estruturado e com exemplos práticos.', q2:'Aprendi sobre os procedimentos de RBI e como aplicar na priorização de inspeções.', savedAt:'10/02/2027 17:30', trainingName:'Inspeção Baseada em Risco (RBI)' } },
+    'fernanda.lima@acelen.com.br':  { 0: { q1:'Muito bom! Conteúdo denso e muito relevante.', q2:'Aprendi a estruturar planos de inspeção baseados em risco de forma sistemática.', savedAt:'10/02/2027 17:45', trainingName:'Inspeção Baseada em Risco (RBI)' }, 1: { q1:'Ótimo treinamento, muito prático e objetivo.', q2:'Aprendi os critérios de aplicação e as limitações dos DTPs.', savedAt:'05/03/2027 17:30', trainingName:'Gestão de Dispositivos Técnicos de Reparos Temporários (DTPs)' } }
+  }
+};
+
+let adminCharts={}, myEvolutionChart=null, avalCharts={}, prontidaoChart=null;
+let currentModalTrainingId=null, currentAutoAnswers={}, currentReacaoAnswers={};
+let editingTrainingId=-1;
+
+function getInitials(n){ return n.split(' ').map(x=>x[0]).slice(0,2).join('').toUpperCase(); }
+function getCollabByEmail(email){ return appData.collaborators.find(c=>c.email.toLowerCase()===email.toLowerCase()); }
+function getCollaborators(){ return appData.collaborators.filter(c=>c.access==='colaborador'); }
+function getCurrentUser(){ return getCollabByEmail(appData.currentUserEmail||''); }
+function isAdmin(){ const u=getCurrentUser(); return u&&u.access==='admin'; }
+function getMaxPtsPerTraining(){ const p=appData.pointsConfig; return p.auto+p.participacao+p.reacao+p.reflexao; }
+function getMaxPts(){ return appData.trainings.length*getMaxPtsPerTraining(); }
+function formatDateBR(dateStr){ if(!dateStr)return'—'; const[y,m,d]=dateStr.split('-'); const months=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']; return`${d} de ${months[parseInt(m)-1]}, ${y}`; }
+
+function isAutoavalUnlocked(trainingDate){
+  if(!trainingDate)return false;
+  const today=new Date();today.setHours(0,0,0,0);
+  const tDate=new Date(trainingDate+'T00:00:00');
+  const dayOfWeek=tDate.getDay();
+  const diffToMonday=dayOfWeek===0?-6:1-dayOfWeek;
+  const monday=new Date(tDate);monday.setDate(tDate.getDate()+diffToMonday);monday.setHours(0,0,0,0);
+  const sunday=new Date(monday);sunday.setDate(monday.getDate()+6);sunday.setHours(23,59,59,999);
+  return today>=monday&&today<=sunday;
+}
+
+function getWeekStartStr(trainingDate){
+  if(!trainingDate)return null;
+  const tDate=new Date(trainingDate+'T00:00:00');
+  const dayOfWeek=tDate.getDay();
+  const diffToMonday=dayOfWeek===0?-6:1-dayOfWeek;
+  const monday=new Date(tDate);monday.setDate(tDate.getDate()+diffToMonday);
+  return monday.toISOString().split('T')[0];
+}
+
+function calcProntidao(email){
+  const pres=appData.presence[email]||{},auto=appData.autoaval[email]||{},reac=appData.reacao[email]||{},resp=appData.responses[email]||{};
+  const total=appData.trainings.length;
+  if(total===0)return{prontidao:0,autoP:0,partP:0,reacP:0,reflP:0,etapasDone:0,etapasTotal:0};
+  let autoCount=0,partCount=0,reacCount=0,reflCount=0;
+  appData.trainings.forEach(t=>{
+    if(auto[t.id])autoCount++;
+    if(pres[t.id]==='participated')partCount++;
+    if(reac[t.id])reacCount++;
+    const rr=resp[t.id];if(rr&&rr.q1&&rr.q2)reflCount++;
+  });
+  const autoP=(autoCount/total)*100,partP=(partCount/total)*100,reacP=(reacCount/total)*100,reflP=(reflCount/total)*100;
+  const prontidao=(autoP*PRONTIDAO_WEIGHTS.auto)+(partP*PRONTIDAO_WEIGHTS.participacao)+(reacP*PRONTIDAO_WEIGHTS.reacao)+(reflP*PRONTIDAO_WEIGHTS.reflexao);
+  return{prontidao:Math.round(prontidao*10)/10,autoP:Math.round(autoP),partP:Math.round(partP),reacP:Math.round(reacP),reflP:Math.round(reflP),etapasDone:autoCount+partCount+reacCount+reflCount,etapasTotal:total*4,autoCount,partCount,reacCount,reflCount};
+}
+
+function calcProntidaoGeral(){
+  const colabs=getCollaborators();
+  if(colabs.length===0)return{prontidao:0,autoP:0,partP:0,reacP:0,reflP:0};
+  let sumP=0,sumA=0,sumPart=0,sumR=0,sumRefl=0;
+  colabs.forEach(c=>{const p=calcProntidao(c.email);sumP+=p.prontidao;sumA+=p.autoP;sumPart+=p.partP;sumR+=p.reacP;sumRefl+=p.reflP;});
+  const n=colabs.length;
+  return{prontidao:Math.round((sumP/n)*10)/10,autoP:Math.round(sumA/n),partP:Math.round(sumPart/n),reacP:Math.round(sumR/n),reflP:Math.round(sumRefl/n)};
+}
+
+function getCollabStats(email){
+  const pres=appData.presence[email]||{},auto=appData.autoaval[email]||{},reac=appData.reacao[email]||{},resp=appData.responses[email]||{},pts=appData.pointsConfig;
+  let participated=0,autoCount=0,reacaoCount=0,reflexaoCount=0,points=0;
+  const total=appData.trainings.length;
+  appData.trainings.forEach(t=>{
+    if(auto[t.id]){autoCount++;points+=pts.auto;}
+    if(pres[t.id]==='participated'){participated++;points+=pts.participacao;if(reac[t.id]){reacaoCount++;points+=pts.reacao;}const rr=resp[t.id];if(rr&&rr.q1&&rr.q2){reflexaoCount++;points+=pts.reflexao;}}
+  });
+  return{participated,total,autoCount,reacaoCount,reflexaoCount,points,pct:total>0?Math.round((participated/total)*100):0};
+}
+
+function getPendingCount(email){
+  const pres=appData.presence[email]||{},auto=appData.autoaval[email]||{},reac=appData.reacao[email]||{},resp=appData.responses[email]||{};
+  let n=0;
+  appData.trainings.forEach(t=>{
+    if(!auto[t.id]&&isAutoavalUnlocked(t.date))n++;
+    if(pres[t.id]==='participated'){if(!reac[t.id])n++;const rr=resp[t.id];if(!rr||!rr.q1||!rr.q2)n++;}
+  });
+  return n;
+}
+
+function showToast(msg,type='success'){
+  const c=document.getElementById('toastContainer'),t=document.createElement('div');
+  t.className=`toast ${type}`;t.innerHTML=`<span>${{success:'✅',error:'❌',info:'ℹ️'}[type]}</span> ${msg}`;
+  c.appendChild(t);setTimeout(()=>{t.style.opacity='0';t.style.transform='translateY(20px)';t.style.transition='all 0.3s';setTimeout(()=>t.remove(),300);},3000);
+}
+
+function getAutoQuestions(tid){return AUTO_QUESTIONS[tid]||["Como você avalia seu conhecimento geral sobre o tema deste treinamento?","Como você avalia sua familiaridade com os procedimentos relacionados a este tema?","Como você avalia sua capacidade de aplicar os conceitos deste tema no dia a dia?","Como você avalia seu conhecimento sobre as normas e padrões relacionados a este tema?","Como você avalia sua segurança para executar as atividades abordadas neste treinamento?"];}
+function getReacaoQuestions(tid){return REACAO_QUESTIONS[tid]||["O conteúdo apresentado foi relevante para minha atividade.","O treinamento contribuiu para ampliar meus conhecimentos.","A abordagem utilizada facilitou o entendimento do conteúdo.","O(s) instrutor(es) apresentou(aram) o conteúdo de forma clara.","Sinto-me mais preparado(a) para aplicar os conhecimentos adquiridos."];}
+
+function updateAdminFAB(){
+  const fab=document.getElementById('fabAddTraining'),bar=document.getElementById('adminQuickBar');
+  if(isAdmin()){fab.classList.add('visible');bar.classList.add('visible');}
+  else{fab.classList.remove('visible');bar.classList.remove('visible');}
+}
+
+function doLogin(){
+  const email=document.getElementById('loginEmail').value.trim().toLowerCase();
+  const errEl=document.getElementById('loginError');errEl.style.display='none';
+  if(!email){errEl.textContent='Digite seu e-mail corporativo.';errEl.style.display='block';return;}
+  const user=appData.collaborators.find(c=>c.email.toLowerCase()===email);
+  if(!user){errEl.textContent='E-mail não encontrado. Verifique e tente novamente.';errEl.style.display='block';return;}
+  appData.currentUserEmail=user.email;
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('appWrapper').classList.add('visible');
+  document.getElementById('headerAvatar').textContent=user.initials;
+  document.getElementById('headerUserName').textContent=user.name;
+  document.getElementById('headerUserEmail').textContent=user.email;
+  if(isAdmin())document.getElementById('adminBtnHeader').style.display='flex';
+  updateAdminFAB();
+  renderAboutTab();renderJourneyTab();updatePendingBadge();
+}
+
+function doLogout(){
+  appData.currentUserEmail=null;
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('appWrapper').classList.remove('visible');
+  document.getElementById('loginEmail').value='';
+  document.getElementById('loginError').style.display='none';
+  document.getElementById('adminBtnHeader').style.display='none';
+  updateAdminFAB();
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-sobre').classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-tab')[0].classList.add('active');
+}
+
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');
+  if(id==='jornada')renderJourneyTab();
+  if(id==='pontuacao')renderPointsTab();
+}
+
+function renderAboutTab(){
+  const c=document.getElementById('trainingsOverview');c.innerHTML='';
+  appData.trainings.forEach((t,i)=>{
+    const d=document.createElement('div');d.className='training-overview-card';
+    d.innerHTML=`<div class="training-overview-num">${i+1}</div><div class="training-overview-info"><div class="training-overview-name">${t.name}</div><div class="training-overview-meta"><span class="training-overview-tag">⏱️ <strong>${t.cargaHoraria}</strong></span><span class="training-overview-tag">👤 <strong>${t.instrutor}</strong></span></div></div>`;
+    c.appendChild(d);
+  });
+  const colabs=getCollaborators();
+  document.getElementById('heroTotalCollab').textContent=colabs.length;
+  document.getElementById('heroTotalTrainings').textContent=appData.trainings.length;
+  document.getElementById('heroMaxPts').textContent=getMaxPts();
+  document.getElementById('trainingsCountLabel').textContent=`${appData.trainings.length} capacitações técnicas planejadas para o ciclo 2027.`;
+  let totalP=0;colabs.forEach(c=>{totalP+=getCollabStats(c.email).participated;});
+  const totalPossible=colabs.length*appData.trainings.length;
+  const pct=totalPossible>0?Math.round((totalP/totalPossible)*100):0;
+  document.getElementById('overallProgress').textContent=pct+'%';
+  document.getElementById('overallProgressLabel').textContent=`${totalP} de ${totalPossible} participações registradas`;
+  document.getElementById('overallProgressBar').style.width=pct+'%';
+  document.getElementById('displayPtsAuto').textContent=appData.pointsConfig.auto;
+  document.getElementById('displayPtsParticipacao').textContent=appData.pointsConfig.participacao;
+  document.getElementById('displayPtsReacao').textContent=appData.pointsConfig.reacao;
+  document.getElementById('displayPtsReflexao').textContent=appData.pointsConfig.reflexao;
+}
+
+function renderJourneyTab(){
+  const email=appData.currentUserEmail;const user=getCurrentUser();if(!user)return;
+  const s=getCollabStats(email);const pending=getPendingCount(email);const maxPts=getMaxPts();
+  document.getElementById('profileAvatar').textContent=user.initials;
+  document.getElementById('profileName').textContent=user.name;
+  document.getElementById('profileRole').textContent=user.role+' · '+user.area;
+  document.getElementById('profileCompleted').textContent=s.participated;
+  document.getElementById('profileAutoCount').textContent=s.autoCount;
+  document.getElementById('profileReacaoCount').textContent=s.reacaoCount;
+  document.getElementById('profilePoints').textContent=s.points;
+  document.getElementById('circleProgress').style.strokeDashoffset=264-(s.pct/100)*264;
+  document.getElementById('circlePercent').textContent=s.pct+'%';
+  document.getElementById('mainProgressBar').style.width=s.pct+'%';
+  document.getElementById('progressTag').textContent=s.pct+'% concluído';
+  document.getElementById('progressLabel').textContent=`${s.participated} de ${s.total} treinamentos concluídos`;
+  document.getElementById('progressPoints').textContent=`${s.points} / ${maxPts} pontos`;
+  updatePendingBadge();
+  document.getElementById('pendingAlert').style.display=pending>0?'flex':'none';
+  renderAccordion(email);
+}
+
+function renderAccordion(email){
+  const container=document.getElementById('accordionList');container.innerHTML='';
+  const pres=appData.presence[email]||{},auto=appData.autoaval[email]||{},reac=appData.reacao[email]||{},resp=appData.responses[email]||{},pts=appData.pointsConfig;
+  appData.trainings.forEach((t,i)=>{
+    const p=pres[t.id],isPresent=p==='participated',isAbsent=p==='not-participated';
+    const hasAuto=!!auto[t.id],hasReacao=!!reac[t.id],hasReflexao=resp[t.id]&&resp[t.id].q1&&resp[t.id].q2;
+    const autoUnlocked=isAutoavalUnlocked(t.date),weekStart=getWeekStartStr(t.date);
+    const reacaoUnlocked=isPresent,reflexaoUnlocked=isPresent&&hasReacao;
+    let tPts=0;
+    if(hasAuto)tPts+=pts.auto;
+    if(isPresent){tPts+=pts.participacao;if(hasReacao)tPts+=pts.reacao;if(hasReflexao)tPts+=pts.reflexao;}
+    let etapasDone=0;
+    if(hasAuto)etapasDone++;if(isPresent)etapasDone++;if(hasReacao)etapasDone++;if(hasReflexao)etapasDone++;
+    let overallStatus='locked',overallLabel='Não iniciado',overallIcon='🔒';
+    if(etapasDone===4){overallStatus='completed';overallLabel='Concluído';overallIcon='✅';}
+    else if(etapasDone>0||autoUnlocked||isPresent){overallStatus='in-progress';overallLabel='Em andamento';overallIcon='🔵';}
+    else if(!autoUnlocked){overallStatus='locked';overallLabel='Aguardando semana';overallIcon='🔒';}
+    else{overallStatus='pending';overallLabel='Pendente';overallIcon='⏳';}
+    const dot1=hasAuto?'done':(autoUnlocked?'active':'locked');
+    const dot2=isPresent?'done':'locked';
+    const dot3=hasReacao?'done':(reacaoUnlocked?'active':'locked');
+    const dot4=hasReflexao?'done':(reflexaoUnlocked?'active':'locked');
+    const acc=document.createElement('div');acc.className=`training-accordion status-${overallStatus}`;acc.id=`acc-${i}`;
+    const header=document.createElement('div');header.className='accordion-header';header.onclick=()=>toggleAccordion(i);
+    header.innerHTML=`<div class="accordion-left"><div class="training-num-badge ${overallStatus}">${i+1}</div><div class="accordion-info"><div class="accordion-title">${t.name}</div><div class="accordion-meta"><span class="accordion-meta-item">⏱️ <strong>${t.cargaHoraria}</strong></span><span class="accordion-meta-item">👤 <strong>${t.instrutor}</strong></span></div></div></div><div class="accordion-right"><div class="etapas-mini"><div class="etapa-dot ${dot1}"></div><div class="etapa-dot ${dot2}"></div><div class="etapa-dot ${dot3}"></div><div class="etapa-dot ${dot4}"></div></div><span class="status-pill ${overallStatus}">${overallIcon} ${overallLabel}</span><span class="training-pts-badge">⭐ ${tPts} pts</span><button class="accordion-chevron" id="chevron-${i}">▼</button></div>`;
+    acc.appendChild(header);
+    const body=document.createElement('div');body.className='accordion-body';body.id=`body-${i}`;
+    const wrapper=document.createElement('div');wrapper.className='etapas-wrapper';
+    wrapper.innerHTML=`<div class="etapas-instruction">📋 <span>Complete as etapas abaixo na ordem indicada. Cada etapa concluída gera pontos para sua jornada.</span></div>`;
+    let e1Status,e1Icon,e1Label,e1Desc,e1Body;
+    if(hasAuto){e1Status='done';e1Icon='✅';e1Label='Concluída';e1Desc='Conhecimento prévio registrado.';const av=auto[t.id];e1Body=`<div class="etapa-response-box"><div class="resp-label">✅ Autoavaliação concluída · ${av.savedAt}</div><div style="font-size:12px;color:var(--gray-text);">Média: <strong style="color:var(--blue);">${av.media.toFixed(1)} / 5.0</strong></div><div class="resp-answers">${av.answers.map((a,qi)=>`<span class="resp-chip">P${qi+1}: ${a}</span>`).join('')}</div></div>`;}
+    else if(autoUnlocked){e1Status='available';e1Icon='📝';e1Label='Disponível';e1Desc='Avalie seu conhecimento antes do treinamento.';e1Body=`<p style="font-size:12px;color:var(--gray-text);margin-bottom:10px;">Estamos na semana do treinamento! Avalie seu nível de conhecimento <strong>antes de participar</strong>.</p><button class="etapa-action-btn blue" onclick="openAutoaval(${t.id})">📝 Iniciar Autoavaliação</button>`;}
+    else{e1Status='locked';e1Icon='🔒';e1Label='Bloqueada';e1Desc='Disponível na semana do treinamento.';const ws=weekStart?`Disponível a partir de <strong>${formatDateBR(weekStart)}</strong>.`:'Data do treinamento não definida.';e1Body=`<div class="locked-msg"><span class="lock-icon">🔒</span><span>Esta etapa estará disponível na semana do treinamento. ${ws}</span></div>`;}
+    let e2Status,e2Icon,e2Label,e2Desc,e2Body;
+    if(isPresent){e2Status='present';e2Icon='✅';e2Label='Presente';e2Desc='Presença confirmada pelo administrador.';e2Body=`<div class="etapa-response-box"><div class="resp-label">✅ Presença confirmada</div><div style="font-size:12px;color:var(--gray-text);">Sua participação neste treinamento foi registrada pelo administrador.</div></div>`;}
+    else if(isAbsent){e2Status='absent';e2Icon='❌';e2Label='Ausente';e2Desc='Ausência registrada pelo administrador.';e2Body=`<div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:12px 14px;font-size:12px;color:var(--danger);">❌ Ausência registrada. Entre em contato com a administradora para verificar a possibilidade de reposição.</div>`;}
+    else{e2Status='waiting';e2Icon='⏳';e2Label='Aguardando';e2Desc='Presença registrada pelo administrador após o treinamento.';e2Body=`<div class="locked-msg"><span class="lock-icon">⏳</span><span>Aguardando realização do treinamento. Sua presença será registrada pelo administrador após o evento.</span></div>`;}
+    let e3Status,e3Icon,e3Label,e3Desc,e3Body;
+    if(hasReacao){e3Status='done';e3Icon='✅';e3Label='Concluída';e3Desc='Avaliação de reação registrada.';const rv=reac[t.id];e3Body=`<div class="etapa-response-box"><div class="resp-label">✅ Av. de Reação concluída · ${rv.savedAt}</div><div style="font-size:12px;color:var(--gray-text);">Média: <strong style="color:var(--orange);">${rv.media.toFixed(1)} / 5.0</strong></div><div class="resp-answers">${rv.answers.map((a,qi)=>`<span class="resp-chip orange">P${qi+1}: ${a}</span>`).join('')}</div></div>`;}
+    else if(reacaoUnlocked){e3Status='available-orange';e3Icon='⭐';e3Label='Disponível';e3Desc='Avalie sua percepção sobre o treinamento.';e3Body=`<p style="font-size:12px;color:var(--gray-text);margin-bottom:10px;">Sua presença foi confirmada! Avalie sua percepção sobre o treinamento.</p><button class="etapa-action-btn orange" onclick="openReacao(${t.id})">⭐ Iniciar Avaliação de Reação</button>`;}
+    else{e3Status='locked';e3Icon='🔒';e3Label='Bloqueada';e3Desc='Liberada após confirmação de presença.';e3Body=`<div class="locked-msg"><span class="lock-icon">🔒</span><span>Esta etapa será liberada automaticamente quando sua presença for confirmada pelo administrador.</span></div>`;}
+    let e4Status,e4Icon,e4Label,e4Desc,e4Body;
+    if(hasReflexao){e4Status='done';e4Icon='✅';e4Label='Concluída';e4Desc='Reflexão registrada com sucesso.';const rv=resp[t.id];e4Body=`<div class="etapa-response-box"><div class="resp-label">✅ Reflexão enviada · ${rv.savedAt}</div><div style="font-size:11px;font-weight:700;color:var(--gray-text);margin-top:8px;text-transform:uppercase;letter-spacing:0.04em;">O que você achou do treinamento?</div><div class="resp-text">${rv.q1}</div><div style="font-size:11px;font-weight:700;color:var(--gray-text);margin-top:8px;text-transform:uppercase;letter-spacing:0.04em;">Como pretende aplicar os aprendizados?</div><div class="resp-text">${rv.q2}</div></div>`;}
+    else if(reflexaoUnlocked){e4Status='available';e4Icon='✍️';e4Label='Disponível';e4Desc='Registre seus aprendizados e como pretende aplicá-los.';e4Body=`<p style="font-size:12px;color:var(--gray-text);margin-bottom:10px;">Avaliação de Reação concluída! Agora registre seus principais aprendizados.</p><button class="etapa-action-btn blue" onclick="openReflection(${t.id})">✍️ Escrever Reflexão</button>`;}
+    else{e4Status='locked';e4Icon='🔒';e4Label='Bloqueada';e4Desc='Liberada após conclusão da Avaliação de Reação.';e4Body=`<div class="locked-msg"><span class="lock-icon">🔒</span><span>Esta etapa será liberada após a conclusão da Avaliação de Reação.</span></div>`;}
+    const etapasData=[
+      {num:'1',name:'Autoavaliação',status:e1Status,icon:e1Icon,label:e1Label,desc:e1Desc,body:e1Body,pts:pts.auto},
+      {num:'2',name:'Participação',status:e2Status,icon:e2Icon,label:e2Label,desc:e2Desc,body:e2Body,pts:pts.participacao},
+      {num:'3',name:'Avaliação de Reação',status:e3Status,icon:e3Icon,label:e3Label,desc:e3Desc,body:e3Body,pts:pts.reacao},
+      {num:'4',name:'Reflexão',status:e4Status,icon:e4Icon,label:e4Label,desc:e4Desc,body:e4Body,pts:pts.reflexao}
+    ];
+    etapasData.forEach((e,ei)=>{
+      const row=document.createElement('div');row.className=`etapa-row etapa-${e.status}`;
+      const connector=document.createElement('div');connector.className='etapa-connector';
+      connector.innerHTML=`<div class="etapa-step-icon ${e.status}">${e.status==='done'?'✓':e.num}</div>`;
+      const inner=document.createElement('div');inner.className=`etapa-card-inner ${e.status}`;
+      inner.innerHTML=`<div class="etapa-card-top"><div class="etapa-card-left"><div><div class="etapa-label-num">Etapa ${e.num}</div><div class="etapa-label-name">${e.name}</div><div class="etapa-label-desc">${e.desc}</div></div></div><div class="etapa-card-right"><span class="etapa-status-badge ${e.status}">${e.icon} ${e.label}</span><span class="etapa-pts-mini">+${e.pts} pts</span>${e.status!=='locked'?`<button class="etapa-action-btn ghost" style="padding:5px 10px;font-size:11px;" onclick="toggleEtapaBody('etbody-${i}-${ei}',this)">Ver ▼</button>`:''}</div></div><div class="etapa-body-content" id="etbody-${i}-${ei}">${e.body}</div>`;
+      row.appendChild(connector);row.appendChild(inner);wrapper.appendChild(row);
+    });
+    body.appendChild(wrapper);acc.appendChild(body);container.appendChild(acc);
+  });
+}
+
+function toggleAccordion(idx){
+  const body=document.getElementById(`body-${idx}`),chevron=document.getElementById(`chevron-${idx}`),acc=document.getElementById(`acc-${idx}`);
+  const isOpen=body.classList.contains('open');
+  document.querySelectorAll('.accordion-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.accordion-chevron').forEach(c=>{c.classList.remove('open');c.textContent='▼';});
+  document.querySelectorAll('.training-accordion').forEach(a=>a.classList.remove('is-open'));
+  if(!isOpen){body.classList.add('open');chevron.classList.add('open');chevron.textContent='▲';acc.classList.add('is-open');setTimeout(()=>{acc.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}
+}
+
+function toggleEtapaBody(id,btn){
+  const b=document.getElementById(id);if(!b)return;
+  const open=b.classList.contains('open');b.classList.toggle('open');
+  btn.textContent=open?'Ver ▼':'Fechar ▲';
+}
+
+function updatePendingBadge(){
+  const email=appData.currentUserEmail;if(!email)return;
+  const pending=getPendingCount(email);
+  const badge=document.getElementById('pendingBadge');
+  badge.textContent=pending;badge.style.display=pending>0?'inline-flex':'none';
+}
+
+function openAutoaval(trainingId){
+  const t=appData.trainings.find(tr=>tr.id===trainingId);
+  if(!t||!isAutoavalUnlocked(t.date)){showToast('A Autoavaliação só está disponível na semana do treinamento.','error');return;}
+  if((appData.autoaval[appData.currentUserEmail]||{})[trainingId]){showToast('Você já concluiu a Autoavaliação deste treinamento.','info');return;}
+  currentModalTrainingId=trainingId;currentAutoAnswers={};
+  document.getElementById('modalAutoTrainingName').textContent=t.name;
+  document.getElementById('modalAutoCH').textContent=t.cargaHoraria;
+  document.getElementById('modalAutoInstructor').textContent=t.instrutor;
+  const qs=getAutoQuestions(trainingId);
+  const container=document.getElementById('autoQuestionsContainer');container.innerHTML='';
+  qs.forEach((q,i)=>{const div=document.createElement('div');div.className='scale-question';div.innerHTML=`<div class="scale-q-text">${i+1}. ${q}</div><div class="scale-options">${[1,2,3,4,5].map(v=>`<button class="scale-btn" data-q="${i}" data-v="${v}" onclick="selectScale(this,'auto')">${v}</button>`).join('')}</div><div class="scale-labels"><span>Não tenho conhecimento</span><span>Domínio do tema</span></div>`;container.appendChild(div);});
+  updateModalProgress('auto',qs.length);
+  document.getElementById('modalAutoavalContent').style.display='block';
+  document.getElementById('modalAutoavalSuccess').style.display='none';
+  openModal('modalAutoaval');
+}
+
+function selectScale(btn,type){
+  const q=parseInt(btn.dataset.q),v=parseInt(btn.dataset.v),isOrange=type==='reacao';
+  btn.closest('.scale-options').querySelectorAll('.scale-btn').forEach(b=>{b.classList.remove('selected','orange');});
+  btn.classList.add('selected');if(isOrange)btn.classList.add('orange');
+  if(type==='auto')currentAutoAnswers[q]=v;else currentReacaoAnswers[q]=v;
+  const total=type==='auto'?getAutoQuestions(currentModalTrainingId).length:getReacaoQuestions(currentModalTrainingId).length;
+  updateModalProgress(type,total);
+}
+
+function updateModalProgress(type,total){
+  const answers=type==='auto'?currentAutoAnswers:currentReacaoAnswers;
+  const done=Object.keys(answers).length,pct=Math.round((done/total)*100);
+  if(type==='auto'){document.getElementById('autoProgressText').textContent=`${done} de ${total} respondidas`;document.getElementById('autoProgressFill').style.width=pct+'%';document.getElementById('autoProgressPct').textContent=pct+'%';}
+  else{document.getElementById('reacaoProgressText').textContent=`${done} de ${total} respondidas`;document.getElementById('reacaoProgressFill').style.width=pct+'%';document.getElementById('reacaoProgressPct').textContent=pct+'%';}
+}
+
+function submitAutoaval(){
+  const qs=getAutoQuestions(currentModalTrainingId);
+  if(Object.keys(currentAutoAnswers).length<qs.length){showToast(`Responda todas as ${qs.length} perguntas antes de enviar.`,'error');return;}
+  const email=appData.currentUserEmail;
+  const answers=qs.map((_,i)=>currentAutoAnswers[i]);
+  const media=answers.reduce((a,b)=>a+b,0)/answers.length;
+  const now=new Date();const savedAt=now.toLocaleDateString('pt-BR')+' '+now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  if(!appData.autoaval[email])appData.autoaval[email]={};
+  appData.autoaval[email][currentModalTrainingId]={answers,media,savedAt};
+  document.getElementById('autoSuccessPts').textContent=`+${appData.pointsConfig.auto} pontos`;
+  document.getElementById('modalAutoavalContent').style.display='none';
+  document.getElementById('modalAutoavalSuccess').style.display='block';
+  renderJourneyTab();updatePendingBadge();
+}
+
+function openReacao(trainingId){
+  const email=appData.currentUserEmail;
+  if((appData.presence[email]||{})[trainingId]!=='participated'){showToast('A Avaliação de Reação só está disponível após confirmação de presença.','error');return;}
+  if((appData.reacao[email]||{})[trainingId]){showToast('Você já concluiu a Avaliação de Reação deste treinamento.','info');return;}
+  currentModalTrainingId=trainingId;currentReacaoAnswers={};
+  const t=appData.trainings.find(tr=>tr.id===trainingId);
+  document.getElementById('modalReacaoTrainingName').textContent=t.name;
+  document.getElementById('modalReacaoCH').textContent=t.cargaHoraria;
+  document.getElementById('modalReacaoInstructor').textContent=t.instrutor;
+  const qs=getReacaoQuestions(trainingId);
+  const container=document.getElementById('reacaoQuestionsContainer');container.innerHTML='';
+  qs.forEach((q,i)=>{const div=document.createElement('div');div.className='scale-question';div.innerHTML=`<div class="scale-q-text">${i+1}. ${q}</div><div class="scale-options">${[1,2,3,4,5].map(v=>`<button class="scale-btn" data-q="${i}" data-v="${v}" onclick="selectScale(this,'reacao')">${v}</button>`).join('')}</div><div class="scale-labels"><span>Discordo totalmente</span><span>Concordo totalmente</span></div>`;container.appendChild(div);});
+  updateModalProgress('reacao',qs.length);
+  document.getElementById('modalReacaoContent').style.display='block';
+  document.getElementById('modalReacaoSuccess').style.display='none';
+  openModal('modalReacao');
+}
+
+function submitReacao(){
+  const email=appData.currentUserEmail;
+  if((appData.presence[email]||{})[currentModalTrainingId]!=='participated'){showToast('Acesso negado.','error');closeModal('modalReacao');return;}
+  const qs=getReacaoQuestions(currentModalTrainingId);
+  if(Object.keys(currentReacaoAnswers).length<qs.length){showToast(`Responda todas as ${qs.length} perguntas.`,'error');return;}
+  const answers=qs.map((_,i)=>currentReacaoAnswers[i]);
+  const media=answers.reduce((a,b)=>a+b,0)/answers.length;
+  const now=new Date();const savedAt=now.toLocaleDateString('pt-BR')+' '+now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  if(!appData.reacao[email])appData.reacao[email]={};
+  appData.reacao[email][currentModalTrainingId]={answers,media,savedAt};
+  document.getElementById('reacaoSuccessPts').textContent=`+${appData.pointsConfig.reacao} pontos`;
+  document.getElementById('modalReacaoContent').style.display='none';
+  document.getElementById('modalReacaoSuccess').style.display='block';
+  renderJourneyTab();updatePendingBadge();
+}
+
+function openReflection(trainingId){
+  const email=appData.currentUserEmail;
+  if((appData.presence[email]||{})[trainingId]!=='participated'){showToast('A Reflexão só está disponível após confirmação de presença.','error');return;}
+  if(!(appData.reacao[email]||{})[trainingId]){showToast('Conclua a Avaliação de Reação antes de escrever a Reflexão.','error');return;}
+  currentModalTrainingId=trainingId;
+  const t=appData.trainings.find(tr=>tr.id===trainingId);const user=getCurrentUser();
+  document.getElementById('modalTrainingName').textContent=t.name;
+  document.getElementById('modalTrainingCH').textContent=t.cargaHoraria;
+  document.getElementById('modalTrainingInstructor').textContent=t.instrutor;
+  document.getElementById('modalCollabName').textContent=user.name;
+  document.getElementById('modalQ1').value='';document.getElementById('modalQ2').value='';
+  document.getElementById('modalReflectionContent').style.display='block';
+  document.getElementById('modalReflectionSuccess').style.display='none';
+  openModal('modalReflection');
+}
+
+function submitReflection(){
+  const email=appData.currentUserEmail;
+  if((appData.presence[email]||{})[currentModalTrainingId]!=='participated'){showToast('Acesso negado.','error');closeModal('modalReflection');return;}
+  if(!(appData.reacao[email]||{})[currentModalTrainingId]){showToast('Conclua a Avaliação de Reação primeiro.','error');closeModal('modalReflection');return;}
+  const q1=document.getElementById('modalQ1').value.trim(),q2=document.getElementById('modalQ2').value.trim();
+  if(!q1||!q2){showToast('Preencha ambos os campos antes de enviar.','error');return;}
+  const t=appData.trainings.find(tr=>tr.id===currentModalTrainingId);
+  const now=new Date();const savedAt=now.toLocaleDateString('pt-BR')+' '+now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  if(!appData.responses[email])appData.responses[email]={};
+  appData.responses[email][currentModalTrainingId]={q1,q2,savedAt,trainingName:t.name};
+  document.getElementById('modalReflectionContent').style.display='none';
+  document.getElementById('modalReflectionSuccess').style.display='block';
+  renderJourneyTab();updatePendingBadge();
+}
+
+function renderPointsTab(){
+  const email=appData.currentUserEmail;const s=getCollabStats(email);const maxPts=getMaxPts();
+  document.getElementById('myTotalPoints').textContent=s.points;
+  document.getElementById('myCompletedCount').textContent=s.participated;
+  document.getElementById('myAutoCount').textContent=s.autoCount;
+  document.getElementById('myReacaoCount').textContent=s.reacaoCount;
+  document.getElementById('myMaxPtsLabel').textContent=`de ${maxPts} possíveis`;
+  document.getElementById('myTotalLabel').textContent=`de ${s.total} no total`;
+  document.getElementById('myReacaoAvail').textContent=`de ${s.participated} disponíveis`;
+  renderMyEvolutionChart(email);renderRankingTable('all');renderPodium();
+}
+
+function renderMyEvolutionChart(email){
+  const pres=appData.presence[email]||{},auto=appData.autoaval[email]||{},reac=appData.reacao[email]||{},resp=appData.responses[email]||{},pts=appData.pointsConfig;
+  const labels=[],data=[];let cum=0;
+  appData.trainings.forEach(t=>{labels.push(t.name.length>16?t.name.substring(0,14)+'…':t.name);if(auto[t.id])cum+=pts.auto;if(pres[t.id]==='participated'){cum+=pts.participacao;if(reac[t.id])cum+=pts.reacao;const r=resp[t.id];if(r&&r.q1&&r.q2)cum+=pts.reflexao;}data.push(cum);});
+  const ctx=document.getElementById('myEvolutionChart');if(!ctx)return;
+  if(myEvolutionChart)myEvolutionChart.destroy();
+  myEvolutionChart=new Chart(ctx,{type:'line',data:{labels,datasets:[{label:'Pontuação acumulada',data,borderColor:'#0573FA',backgroundColor:'rgba(5,115,250,0.06)',borderWidth:3,pointBackgroundColor:'#0573FA',pointRadius:5,fill:true,tension:0.4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{family:'Sora',size:11}}},x:{grid:{display:false},ticks:{font:{family:'Sora',size:10},maxRotation:30}}}}});
+}
+
+function getRanked(){return getCollaborators().map(c=>{const s=getCollabStats(c.email);const pr=calcProntidao(c.email);return{...c,...s,prontidao:pr.prontidao};}).sort((a,b)=>b.points-a.points||b.participated-a.participated);}
+
+function renderRankingTable(filter){
+  let ranked=getRanked();if(filter==='top')ranked=ranked.slice(0,3);
+  const tbody=document.getElementById('rankingBody');if(!tbody)return;tbody.innerHTML='';
+  const currentEmail=appData.currentUserEmail;
+  ranked.forEach((c,i)=>{
+    const pos=i+1,rc=pos===1?'rank-1':pos===2?'rank-2':pos===3?'rank-3':'rank-other',medal=pos===1?'🥇':pos===2?'🥈':pos===3?'🥉':'',isMe=c.email===currentEmail;
+    const displayName=c.name.split(' ').map((n,i)=>i===0?n:n[0]+'.').join(' ');
+    const tr=document.createElement('tr');if(isMe)tr.style.background='rgba(5,115,250,0.04)';
+    tr.innerHTML=`<td><div class="rank-position ${rc}">${medal||pos}</div></td><td><div class="collab-name-cell"><div class="collab-mini-avatar" style="background:${c.color}">${c.initials}</div><div style="font-weight:600;">${displayName}${isMe?' <span class="tag tag-blue" style="font-size:10px;">Você</span>':''}</div></div></td><td><strong>${c.participated}</strong>/${c.total}</td><td><div class="participation-bar"><div class="participation-bar-bg"><div class="participation-bar-fill" style="width:${c.pct}%"></div></div><span style="font-size:12px;font-weight:600;">${c.pct}%</span></div></td><td><strong style="color:var(--orange);">${c.points}</strong> pts</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderPodium(){
+  const ranked=getRanked().slice(0,3);const p=document.getElementById('podiumArea');if(!p)return;p.innerHTML='';
+  const order=[1,0,2],medals=['🥈','🥇','🥉'],positions=['2º','1º','3º'],colors=['var(--gray-mid)','var(--blue)','#CD7F32'];
+  order.forEach((idx,i)=>{if(!ranked[idx])return;const c=ranked[idx];const d=document.createElement('div');d.style.cssText='text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;';d.innerHTML=`<div style="font-size:26px;">${medals[i]}</div><div style="width:52px;height:52px;border-radius:50%;background:${c.color};display:flex;align-items:center;justify-content:center;color:white;font-size:17px;font-weight:800;border:3px solid white;box-shadow:0 4px 12px rgba(0,0,0,0.12);">${c.initials}</div><div style="font-size:12px;font-weight:700;color:var(--dark);max-width:80px;line-height:1.3;">${c.name.split(' ')[0]}</div><div style="background:${colors[i]};color:white;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:800;display:flex;flex-direction:column;align-items:center;gap:2px;"><span>${c.points} pts</span><span style="font-size:10px;opacity:0.8;">${positions[i]} lugar</span></div>`;p.appendChild(d);});
+}
+
+function filterRanking(type,btn){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderRankingTable(type);}
+
+function openAdmin(){if(!isAdmin()){showToast('Acesso restrito à administradora.','error');return;}document.getElementById('adminPanel').classList.add('open');renderAdminDashboard();renderProntidaoDashboard();renderAvaliacoesDashboard();renderCollabListAdmin();renderTrainingListAdmin();renderPresenceTable();renderResponsesAdmin();renderAdminRanking();}
+function closeAdmin(){document.getElementById('adminPanel').classList.remove('open');}
+
+function switchAdminSection(section,el){
+  document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.admin-nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('admin-'+section).classList.add('active');
+  if(el)el.classList.add('active');
+  else{document.querySelectorAll('.admin-nav-item').forEach(n=>{if(n.getAttribute('onclick')&&n.getAttribute('onclick').includes(section))n.classList.add('active');});}
+  if(section==='dashboard')renderAdminDashboard();
+  if(section==='prontidao')renderProntidaoDashboard();
+  if(section==='avaliacoes')renderAvaliacoesDashboard();
+  if(section==='presenca')renderPresenceTable();
+  if(section==='respostas')renderResponsesAdmin();
+  if(section==='ranking')renderAdminRanking();
+}
+
+function renderAdminDashboard(){
+  const colabs=getCollaborators();let totalP=0,totalPts=0;
+  colabs.forEach(c=>{const s=getCollabStats(c.email);totalP+=s.participated;totalPts+=s.points;});
+  const n=colabs.length,total=appData.trainings.length;
+  const avgP=n>0?Math.round((totalP/(n*total))*100):0;
+  const ranked=getRanked();const avgPts=n>0?Math.round(totalPts/n):0;
+  const full=ranked.filter(c=>c.participated===total).length;
+  let possibleR=0,doneR=0;
+  colabs.forEach(c=>{const s=getCollabStats(c.email);possibleR+=s.participated;doneR+=s.reflexaoCount;});
+  const responseRate=possibleR>0?Math.round((doneR/possibleR)*100):0;
+  document.getElementById('adminTotalCollab').textContent=n;
+  document.getElementById('adminTotalParticipations').textContent=totalP;
+  document.getElementById('adminAvgParticipation').textContent=avgP+'%';
+  document.getElementById('adminTotalPoints').textContent=totalPts;
+  document.getElementById('adminAvgPoints').textContent=avgPts+' pts';
+  document.getElementById('adminFullParticipation').textContent=full;
+  document.getElementById('adminTrailCompletion').textContent=(n>0?Math.round((totalP/(n*total))*100):0)+'%';
+  document.getElementById('adminResponseRate').textContent=responseRate+'%';
+  document.getElementById('adminTotalTrainings').textContent=total;
+  const tp=appData.trainings.map(t=>{let cnt=0;colabs.forEach(c=>{if((appData.presence[c.email]||{})[t.id]==='participated')cnt++;});return{name:t.name,count:cnt};});
+  const best=tp.length>0?tp.reduce((a,b)=>a.count>=b.count?a:b,{count:-1,name:'—'}):{name:'—'};
+  const worst=tp.length>0?tp.reduce((a,b)=>a.count<=b.count?a:b,{count:999,name:'—'}):{name:'—'};
+  document.getElementById('adminBestTraining').textContent=best.name.length>18?best.name.substring(0,16)+'…':best.name;
+  document.getElementById('adminWorstTraining').textContent=worst.name.length>18?worst.name.substring(0,16)+'…':worst.name;
+  const topDiv=document.getElementById('adminTopCollab');topDiv.innerHTML='';
+  ranked.slice(0,5).forEach((c,i)=>{const d=document.createElement('div');d.style.cssText='display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--gray-light);';d.innerHTML=`<div style="width:24px;height:24px;border-radius:50%;background:${i<3?'var(--blue)':'var(--gray-mid)'};display:flex;align-items:center;justify-content:center;color:white;font-size:10px;font-weight:700;">${i+1}</div><div style="width:30px;height:30px;border-radius:50%;background:${c.color};display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700;">${c.initials}</div><div style="flex:1;"><div style="font-size:12px;font-weight:600;">${c.name}</div><div style="font-size:10px;color:var(--gray-text);">${c.email}</div></div><div style="font-size:14px;font-weight:800;color:var(--orange);">${c.points} pts</div>`;topDiv.appendChild(d);});
+  const pg=calcProntidaoGeral();
+  document.getElementById('dashProntidaoValue').textContent=pg.prontidao.toFixed(1)+'%';
+  document.getElementById('miniBarAuto').style.width=pg.autoP+'%';document.getElementById('miniValAuto').textContent=pg.autoP+'%';
+  document.getElementById('miniBarPart').style.width=pg.partP+'%';document.getElementById('miniValPart').textContent=pg.partP+'%';
+  document.getElementById('miniBarReac').style.width=pg.reacP+'%';document.getElementById('miniValReac').textContent=pg.reacP+'%';
+  document.getElementById('miniBarRefl').style.width=pg.reflP+'%';document.getElementById('miniValRefl').textContent=pg.reflP+'%';
+  const ctx1=document.getElementById('adminParticipationChart');
+  if(ctx1){if(adminCharts.p)adminCharts.p.destroy();adminCharts.p=new Chart(ctx1,{type:'bar',data:{labels:tp.map(t=>t.name.length>14?t.name.substring(0,12)+'…':t.name),datasets:[{label:'Participantes',data:tp.map(t=>t.count),backgroundColor:'rgba(5,115,250,0.65)',borderColor:'#0573FA',borderWidth:2,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:Math.max(n,1),grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{family:'Sora',size:10}}},x:{grid:{display:false},ticks:{font:{family:'Sora',size:9},maxRotation:45}}}}});}
+  const ctx2=document.getElementById('adminPointsChart');
+  if(ctx2){if(adminCharts.pts)adminCharts.pts.destroy();adminCharts.pts=new Chart(ctx2,{type:'bar',data:{labels:ranked.map(c=>c.name.split(' ')[0]),datasets:[{label:'Pontos',data:ranked.map(c=>c.points),backgroundColor:ranked.map((c,i)=>i===0?'rgba(250,100,32,0.75)':'rgba(5,115,250,0.55)'),borderColor:ranked.map((c,i)=>i===0?'#FA6420':'#0573FA'),borderWidth:2,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{family:'Sora',size:10}}},x:{grid:{display:false},ticks:{font:{family:'Sora',size:10}}}}}});}
+}
+
+function renderProntidaoDashboard(){
+  const colabs=getCollaborators();const pg=calcProntidaoGeral();
+  document.getElementById('prontidaoGeral').textContent=pg.prontidao.toFixed(1)+'%';
+  document.getElementById('prontidaoAutoVal').textContent=pg.autoP+'%';
+  document.getElementById('prontidaoPartVal').textContent=pg.partP+'%';
+  document.getElementById('prontidaoReacVal').textContent=pg.reacP+'%';
+  const prontidaoData=colabs.map(c=>{const p=calcProntidao(c.email);return{name:c.name.split(' ')[0],prontidao:p.prontidao,color:c.color};}).sort((a,b)=>b.prontidao-a.prontidao);
+  const ctx=document.getElementById('prontidaoChart');
+  if(ctx){if(prontidaoChart)prontidaoChart.destroy();prontidaoChart=new Chart(ctx,{type:'bar',data:{labels:prontidaoData.map(c=>c.name),datasets:[{label:'Prontidão Técnica (%)',data:prontidaoData.map(c=>c.prontidao),backgroundColor:prontidaoData.map(c=>c.color+'99'),borderColor:prontidaoData.map(c=>c.color),borderWidth:2,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:100,grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{family:'Sora',size:10},callback:v=>v+'%'}},x:{grid:{display:false},ticks:{font:{family:'Sora',size:10}}}}}});}
+  const tbody=document.getElementById('prontidaoCollabBody');tbody.innerHTML='';
+  colabs.forEach(c=>{
+    const p=calcProntidao(c.email);
+    const tr=document.createElement('tr');
+    const pBar=(val)=>`<div class="prontidao-bar-inline"><div class="prontidao-bar-inline-bg"><div class="prontidao-bar-inline-fill" style="width:${val}%;background:var(--blue);"></div></div><span style="font-size:12px;font-weight:600;min-width:36px;">${val}%</span></div>`;
+    tr.innerHTML=`<td><div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;border-radius:50%;background:${c.color};display:flex;align-items:center;justify-content:center;color:white;font-size:10px;font-weight:700;">${c.initials}</div><span style="font-weight:600;">${c.name}</span></div></td><td>${pBar(p.autoP)}</td><td>${pBar(p.partP)}</td><td>${pBar(p.reacP)}</td><td>${pBar(p.reflP)}</td><td><span style="font-size:12px;color:var(--gray-text);">${p.etapasDone} / ${p.etapasTotal}</span></td><td><strong style="font-size:16px;color:${p.prontidao>=70?'var(--success)':p.prontidao>=40?'var(--warning)':'var(--danger)'};">${p.prontidao.toFixed(1)}%</strong></td>`;
+    tbody.appendChild(tr);
+  });
+  const tbody2=document.getElementById('prontidaoTrainingBody');tbody2.innerHTML='';
+  appData.trainings.forEach((t,i)=>{
+    let autoC=0,partC=0,reacC=0,reflC=0;
+    colabs.forEach(c=>{if((appData.autoaval[c.email]||{})[t.id])autoC++;if((appData.presence[c.email]||{})[t.id]==='participated')partC++;if((appData.reacao[c.email]||{})[t.id])reacC++;const rr=(appData.responses[c.email]||{})[t.id];if(rr&&rr.q1&&rr.q2)reflC++;});
+    const n=colabs.length||1;
+    const autoP=Math.round((autoC/n)*100),partP=Math.round((partC/n)*100),reacP=Math.round((reacC/n)*100),reflP=Math.round((reflC/n)*100);
+    const pront=Math.round((autoP*PRONTIDAO_WEIGHTS.auto+partP*PRONTIDAO_WEIGHTS.participacao+reacP*PRONTIDAO_WEIGHTS.reacao+reflP*PRONTIDAO_WEIGHTS.reflexao)*10)/10;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${i+1}</td><td style="font-size:12px;font-weight:600;">${t.name}</td><td>${autoC}/${colabs.length} <span style="font-size:10px;color:var(--gray-text);">(${autoP}%)</span></td><td>${partC}/${colabs.length} <span style="font-size:10px;color:var(--gray-text);">(${partP}%)</span></td><td>${reacC}/${colabs.length} <span style="font-size:10px;color:var(--gray-text);">(${reacP}%)</span></td><td>${reflC}/${colabs.length} <span style="font-size:10px;color:var(--gray-text);">(${reflP}%)</span></td><td><strong style="color:${pront>=70?'var(--success)':pront>=40?'var(--warning)':'var(--danger)'};">${pront}%</strong></td>`;
+    tbody2.appendChild(tr);
+  });
+}
+
+function renderAvaliacoesDashboard(){
+  const colabs=getCollaborators();
+  const filterTid=document.getElementById('avalTrainingFilter')?.value||'all';
+  const sel=document.getElementById('avalTrainingFilter');
+  if(sel&&sel.options.length<=1){appData.trainings.forEach((t,i)=>{const o=document.createElement('option');o.value=t.id;o.textContent=`${i+1}. ${t.name}`;sel.appendChild(o);});}
+  const trainingsToAnalyze=filterTid==='all'?appData.trainings:appData.trainings.filter(t=>t.id===parseInt(filterTid));
+  let totalAutoFeitas=0,totalAutoPossivel=0,totalReacaoFeitas=0,totalReacaoPossivel=0,somaAuto=0,countAuto=0,somaReacao=0,countReacao=0;
+  trainingsToAnalyze.forEach(t=>{colabs.forEach(c=>{totalAutoPossivel++;const av=(appData.autoaval[c.email]||{})[t.id];if(av){totalAutoFeitas++;somaAuto+=av.media;countAuto++;}if((appData.presence[c.email]||{})[t.id]==='participated'){totalReacaoPossivel++;const rv=(appData.reacao[c.email]||{})[t.id];if(rv){totalReacaoFeitas++;somaReacao+=rv.media;countReacao++;}}});});
+  const autoPct=totalAutoPossivel>0?Math.round((totalAutoFeitas/totalAutoPossivel)*100):0;
+  const reacaoPct=totalReacaoPossivel>0?Math.round((totalReacaoFeitas/totalReacaoPossivel)*100):0;
+  document.getElementById('avalAutoTotal').textContent=totalAutoFeitas;
+  document.getElementById('avalAutoPct').textContent=`${autoPct}% do total`;
+  document.getElementById('avalReacaoTotal').textContent=totalReacaoFeitas;
+  document.getElementById('avalReacaoPct').textContent=`${reacaoPct}% dos presentes`;
+  document.getElementById('avalAutoMedia').textContent=countAuto>0?(somaAuto/countAuto).toFixed(1):'—';
+  document.getElementById('avalReacaoMedia').textContent=countReacao>0?(somaReacao/countReacao).toFixed(1):'—';
+  const compContainer=document.getElementById('avalComparativoContainer');compContainer.innerHTML='';
+  trainingsToAnalyze.forEach((t,i)=>{
+    let sumA=0,cntA=0,sumR=0,cntR=0;
+    colabs.forEach(c=>{const av=(appData.autoaval[c.email]||{})[t.id];if(av){sumA+=av.media;cntA++;}const rv=(appData.reacao[c.email]||{})[t.id];if(rv){sumR+=rv.media;cntR++;}});
+    const mA=cntA>0?(sumA/cntA):null,mR=cntR>0?(sumR/cntR):null;
+    const diff=mA!==null&&mR!==null?mR-mA:null;
+    const evolClass=diff===null?'neutral':diff>0?'positive':diff<0?'negative':'neutral';
+    const evolText=diff===null?'Sem dados':diff>0?`▲ +${diff.toFixed(1)}`:diff<0?`▼ ${diff.toFixed(1)}`:'= Sem variação';
+    const card=document.createElement('div');card.className='aval-compare-card';
+    card.innerHTML=`<div class="aval-compare-title">${i+1}. ${t.name}</div><div class="aval-compare-row"><span class="aval-compare-label" style="color:var(--blue);">📝 Autoavaliação</span><div class="aval-compare-bar-bg"><div class="aval-compare-bar-fill" style="width:${mA?mA/5*100:0}%;background:var(--blue);"></div></div><span class="aval-compare-val" style="color:var(--blue);">${mA?mA.toFixed(1):'—'}</span></div><div class="aval-compare-row"><span class="aval-compare-label" style="color:var(--orange);">⭐ Av. de Reação</span><div class="aval-compare-bar-bg"><div class="aval-compare-bar-fill" style="width:${mR?mR/5*100:0}%;background:var(--orange);"></div></div><span class="aval-compare-val" style="color:var(--orange);">${mR?mR.toFixed(1):'—'}</span></div><div style="margin-top:8px;display:flex;align-items:center;gap:8px;"><span style="font-size:12px;color:var(--gray-text);">Evolução percebida:</span><span class="evolution-badge ${evolClass}">${evolText}</span></div>`;
+    compContainer.appendChild(card);
+  });
+  const autoData=trainingsToAnalyze.map(t=>{let s=0,c=0;colabs.forEach(col=>{const av=(appData.autoaval[col.email]||{})[t.id];if(av){s+=av.media;c++;}});return c>0?parseFloat((s/c).toFixed(2)):0;});
+  const reacaoData=trainingsToAnalyze.map(t=>{let s=0,c=0;colabs.forEach(col=>{const rv=(appData.reacao[col.email]||{})[t.id];if(rv){s+=rv.media;c++;}});return c>0?parseFloat((s/c).toFixed(2)):0;});
+  const tLabels=trainingsToAnalyze.map(t=>t.name.length>14?t.name.substring(0,12)+'…':t.name);
+  const ctx3=document.getElementById('avalAutoChart');if(ctx3){if(avalCharts.auto)avalCharts.auto.destroy();avalCharts.auto=new Chart(ctx3,{type:'bar',data:{labels:tLabels,datasets:[{label:'Média',data:autoData,backgroundColor:'rgba(5,115,250,0.65)',borderColor:'#0573FA',borderWidth:2,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:5,grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{family:'Sora',size:10}}},x:{grid:{display:false},ticks:{font:{family:'Sora',size:9},maxRotation:45}}}}});}
+  const ctx4=document.getElementById('avalReacaoChart');if(ctx4){if(avalCharts.reacao)avalCharts.reacao.destroy();avalCharts.reacao=new Chart(ctx4,{type:'bar',data:{labels:tLabels,datasets:[{label:'Média',data:reacaoData,backgroundColor:'rgba(250,100,32,0.65)',borderColor:'#FA6420',borderWidth:2,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:5,grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{family:'Sora',size:10}}},x:{grid:{display:false},ticks:{font:{family:'Sora',size:9},maxRotation:45}}}}});}
+  const tbody=document.getElementById('avalDetalheBody');tbody.innerHTML='';
+  trainingsToAnalyze.forEach((t,i)=>{
+    let presentes=0,autoFeitas=0,reacaoFeitas=0,sumA=0,cntA=0,sumR=0,cntR=0,ptsGerados=0;
+    colabs.forEach(c=>{const av=(appData.autoaval[c.email]||{})[t.id];if(av){autoFeitas++;sumA+=av.media;cntA++;ptsGerados+=appData.pointsConfig.auto;}if((appData.presence[c.email]||{})[t.id]==='participated'){presentes++;ptsGerados+=appData.pointsConfig.participacao;const rv=(appData.reacao[c.email]||{})[t.id];if(rv){reacaoFeitas++;sumR+=rv.media;cntR++;ptsGerados+=appData.pointsConfig.reacao;}const rsp=(appData.responses[c.email]||{})[t.id];if(rsp&&rsp.q1)ptsGerados+=appData.pointsConfig.reflexao;}});
+    const mA=cntA>0?(sumA/cntA).toFixed(1):'—',mR=cntR>0?(sumR/cntR).toFixed(1):'—';
+    const diff=cntA>0&&cntR>0?parseFloat(mR)-parseFloat(mA):null;
+    const evolClass=diff===null?'neutral':diff>0?'positive':diff<0?'negative':'neutral';
+    const evolText=diff===null?'—':diff>0?`▲ +${diff.toFixed(1)}`:diff<0?`▼ ${diff.toFixed(1)}`:'=';
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${i+1}</td><td style="font-size:12px;font-weight:600;">${t.name}</td><td>${presentes}</td><td>${autoFeitas}/${colabs.length}</td><td><strong style="color:var(--blue);">${mA}</strong></td><td>${reacaoFeitas}/${presentes}</td><td><strong style="color:var(--orange);">${mR}</strong></td><td><span class="evolution-badge ${evolClass}">${evolText}</span></td><td><strong style="color:var(--orange);">${ptsGerados} pts</strong></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderCollabListAdmin(){
+  const c=document.getElementById('collabListAdmin');c.innerHTML='';
+  appData.collaborators.forEach(col=>{const s=getCollabStats(col.email);const pr=calcProntidao(col.email);const d=document.createElement('div');d.className='collab-list-item';d.innerHTML=`<div class="collab-list-info"><div style="width:38px;height:38px;border-radius:50%;background:${col.color};display:flex;align-items:center;justify-content:center;color:white;font-size:13px;font-weight:700;">${col.initials}</div><div><div style="font-size:13px;font-weight:700;">${col.name} ${col.access==='admin'?'<span class="tag tag-orange" style="font-size:10px;">Admin</span>':''}</div><div style="font-size:11px;color:var(--gray-text);">${col.email} · ${col.role}</div><div style="font-size:11px;color:var(--gray-text);">Trein: ${s.participated}/${s.total} · Auto: ${s.autoCount} · Reação: ${s.reacaoCount} · ${s.points} pts · Prontidão: <strong style="color:var(--blue);">${pr.prontidao.toFixed(1)}%</strong></div></div></div><div><button class="btn btn-ghost btn-sm" onclick="editCollab(${col.id})">✏️ Editar</button></div>`;c.appendChild(d);});
+}
+
+function renderTrainingListAdmin(){
+  const c=document.getElementById('trainingListAdmin');c.innerHTML='';
+  const fs=document.getElementById('adminTrainingFilter'),rf=document.getElementById('adminResponseFilter');
+  if(fs)fs.innerHTML='';if(rf)rf.innerHTML='<option value="all">Todos os treinamentos</option>';
+  const rcf=document.getElementById('adminResponseCollabFilter');
+  if(rcf){rcf.innerHTML='<option value="all">Todos os colaboradores</option>';getCollaborators().forEach(c=>{const o=document.createElement('option');o.value=c.email;o.textContent=c.name+' ('+c.email+')';rcf.appendChild(o);});}
+  appData.trainings.forEach((t,i)=>{
+    const d=document.createElement('div');d.className='training-list-item';
+    d.innerHTML=`<div style="display:flex;align-items:flex-start;gap:12px;flex:1;"><div class="training-list-num" style="margin-top:2px;">${i+1}</div><div><div style="font-size:13px;font-weight:700;">${t.name}</div><div style="font-size:11px;color:var(--gray-text);margin-top:3px;">⏱️ ${t.cargaHoraria} &nbsp;·&nbsp; 👤 ${t.instrutor} &nbsp;·&nbsp; 📅 ${t.date?formatDateBR(t.date):'Sem data'}</div></div></div><div style="display:flex;gap:8px;"><button class="btn btn-primary btn-sm" onclick="openEditTraining(${t.id})">✏️ Editar</button></div>`;
+    c.appendChild(d);
+    if(fs){const o=document.createElement('option');o.value=t.id;o.textContent=`${i+1}. ${t.name}`;fs.appendChild(o);}
+    if(rf){const o=document.createElement('option');o.value=t.id;o.textContent=`${i+1}. ${t.name}`;rf.appendChild(o);}
+  });
+}
+
+function openEditTraining(trainingId){
+  const t=appData.trainings.find(tr=>tr.id===trainingId);
+  if(!t){showToast('Treinamento não encontrado.','error');return;}
+  editingTrainingId=trainingId;
+  document.getElementById('modalTrainingTitle').textContent='✏️ Editar Treinamento';
+  document.getElementById('modalTrainingHint').innerHTML='ℹ️ Edite as informações do treinamento. A alteração da data atualiza automaticamente a regra de liberação da Autoavaliação.';
+  document.getElementById('newTrainingName').value=t.name;
+  document.getElementById('newTrainingCH').value=t.cargaHoraria;
+  document.getElementById('newTrainingInstructor').value=t.instrutor;
+  document.getElementById('newTrainingDate').value=t.date||'';
+  document.getElementById('btnSaveTraining').textContent='💾 Salvar Alterações';
+  document.getElementById('btnSaveTraining').onclick=saveTraining;
+  openModal('modalAddTraining');
+}
+
+function openAddTraining(){
+  if(!isAdmin()){showToast('Acesso restrito à administradora.','error');return;}
+  editingTrainingId=-1;
+  document.getElementById('modalTrainingTitle').textContent='📋 Novo Treinamento';
+  document.getElementById('modalTrainingHint').innerHTML='ℹ️ Preencha: <strong>nome</strong>, <strong>carga horária</strong>, <strong>instrutor(es)</strong> e <strong>data</strong>. A data controla a liberação da Autoavaliação.';
+  document.getElementById('newTrainingName').value='';
+  document.getElementById('newTrainingCH').value='';
+  document.getElementById('newTrainingInstructor').value='';
+  document.getElementById('newTrainingDate').value='';
+  document.getElementById('btnSaveTraining').textContent='✅ Salvar Treinamento';
+  document.getElementById('btnSaveTraining').onclick=saveTraining;
+  openModal('modalAddTraining');
+}
+
+function saveTraining(){
+  if(!isAdmin()){showToast('Acesso restrito.','error');return;}
+  const name=document.getElementById('newTrainingName').value.trim();
+  const ch=document.getElementById('newTrainingCH').value.trim();
+  const instrutor=document.getElementById('newTrainingInstructor').value.trim();
+  const date=document.getElementById('newTrainingDate').value;
+  if(!name||!ch||!instrutor){showToast('Preencha todos os campos obrigatórios.','error');return;}
+  if(editingTrainingId>=0){
+    const idx=appData.trainings.findIndex(t=>t.id===editingTrainingId);
+    if(idx<0){showToast('Treinamento não encontrado.','error');return;}
+    appData.trainings[idx].name=name;appData.trainings[idx].cargaHoraria=ch;appData.trainings[idx].instrutor=instrutor;appData.trainings[idx].date=date;
+    closeModal('modalAddTraining');
+    renderAboutTab();renderJourneyTab();renderTrainingListAdmin();renderPresenceTable();renderAvaliacoesDashboard();renderProntidaoDashboard();renderAdminRanking();
+    showToast(`✅ Treinamento "${name}" atualizado com sucesso!`,'success');
+  } else {
+    const id=appData.trainings.length;
+    appData.trainings.push({id,name,cargaHoraria:ch,instrutor,date});
+    getCollaborators().forEach(c=>{if(!appData.presence[c.email])appData.presence[c.email]={};appData.presence[c.email][id]='pending';});
+    closeModal('modalAddTraining');
+    renderAboutTab();renderJourneyTab();renderTrainingListAdmin();
+    showToast(`✅ Treinamento "${name}" adicionado!`,'success');
+  }
+}
+
+function renderPresenceTable(){
+  const tid=parseInt(document.getElementById('adminTrainingFilter')?.value||0);
+  const tbody=document.getElementById('presenceBody');if(!tbody)return;tbody.innerHTML='';
+  getCollaborators().forEach(c=>{
+    const p=(appData.presence[c.email]||{})[tid]||'pending';
+    const hasAuto=!!(appData.autoaval[c.email]||{})[tid];
+    const hasReacao=!!(appData.reacao[c.email]||{})[tid];
+    const hasRefl=(appData.responses[c.email]||{})[tid];const hasReflBool=hasRefl&&hasRefl.q1&&hasRefl.q2;
+    const pp=p==='participated'?appData.pointsConfig.participacao:0;
+    const pa=hasAuto?appData.pointsConfig.auto:0;
+    const pr=p==='participated'&&hasReacao?appData.pointsConfig.reacao:0;
+    const prf=p==='participated'&&hasReflBool?appData.pointsConfig.reflexao:0;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><div style="display:flex;align-items:center;gap:8px;"><div style="width:30px;height:30px;border-radius:50%;background:${c.color};display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700;">${c.initials}</div><span style="font-size:13px;font-weight:600;">${c.name}</span></div></td><td style="font-size:11px;color:var(--gray-text);">${c.email}</td><td style="font-size:12px;color:var(--gray-text);">${c.role}</td><td><select class="presence-select ${p==='participated'?'participated':p==='not-participated'?'not-participated':'pending'}" id="pres-${c.id}-${tid}" onchange="onPresChange(this)"><option value="pending" ${p==='pending'?'selected':''}>⏳ Pendente</option><option value="participated" ${p==='participated'?'selected':''}>✅ Participou</option><option value="not-participated" ${p==='not-participated'?'selected':''}>❌ Não participou</option></select></td><td>${hasAuto?'<span class="tag tag-blue">✅ Feita</span>':'<span class="tag tag-gray">Pendente</span>'}</td><td>${p==='participated'?(hasReacao?'<span class="tag tag-orange">✅ Feita</span>':'<span class="tag tag-gray">Pendente</span>'):'<span class="tag tag-gray">🔒</span>'}</td><td>${p==='participated'?(hasReflBool?'<span class="tag tag-green">✅ Feita</span>':'<span class="tag tag-gray">Pendente</span>'):'<span class="tag tag-gray">🔒</span>'}</td><td><strong style="color:var(--orange);">${pa+pp+pr+prf} pts</strong></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function onPresChange(sel){const v=sel.value;sel.className=`presence-select ${v==='participated'?'participated':v==='not-participated'?'not-participated':'pending'}`;}
+
+function savePresence(){
+  const tid=parseInt(document.getElementById('adminTrainingFilter')?.value||0);
+  getCollaborators().forEach(c=>{const sel=document.getElementById(`pres-${c.id}-${tid}`);if(sel){if(!appData.presence[c.email])appData.presence[c.email]={};appData.presence[c.email][tid]=sel.value;}});
+  showToast('Presenças salvas! A Av. de Reação foi liberada para os presentes.','success');
+  renderPresenceTable();
+  if(!isAdmin())renderJourneyTab();
+}
+
+function renderResponsesAdmin(){
+  const collabFilter=document.getElementById('adminResponseCollabFilter')?.value||'all';
+  const trainingFilter=document.getElementById('adminResponseFilter')?.value||'all';
+  const container=document.getElementById('responsesContainer');if(!container)return;container.innerHTML='';
+  const colabs=getCollaborators().filter(c=>collabFilter==='all'||c.email===collabFilter);
+  let hasAny=false;
+  appData.trainings.forEach(t=>{
+    if(trainingFilter!=='all'&&parseInt(trainingFilter)!==t.id)return;
+    const entries=[];colabs.forEach(c=>{const av=(appData.autoaval[c.email]||{})[t.id];const rv=(appData.reacao[c.email]||{})[t.id];const rsp=(appData.responses[c.email]||{})[t.id];if(av||rv||rsp)entries.push({collab:c,av,rv,rsp});});
+    if(!entries.length)return;hasAny=true;
+    const s=document.createElement('div');s.style.marginBottom='20px';
+    s.innerHTML=`<div class="card"><div style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px;display:flex;align-items:center;gap:10px;"><span style="background:rgba(5,115,250,0.08);color:var(--blue);border-radius:50%;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">${t.id+1}</span>${t.name}</div><div style="font-size:11px;color:var(--gray-text);margin-bottom:16px;">⏱️ ${t.cargaHoraria} &nbsp;·&nbsp; 👤 ${t.instrutor}</div>${entries.map(({collab,av,rv,rsp})=>`<div style="background:var(--light-bg);border-radius:var(--radius-sm);padding:16px;margin-bottom:12px;border:1px solid rgba(5,115,250,0.08);"><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><div style="width:28px;height:28px;border-radius:50%;background:${collab.color};display:flex;align-items:center;justify-content:center;color:white;font-size:10px;font-weight:700;">${collab.initials}</div><div><div style="font-size:13px;font-weight:700;">${collab.name}</div><div style="font-size:11px;color:var(--gray-text);">${collab.email}</div></div></div>${av?`<div style="margin-bottom:10px;"><div style="font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;">📝 Autoavaliação · Média: ${av.media.toFixed(1)}/5 · ${av.savedAt}</div><div style="display:flex;gap:6px;flex-wrap:wrap;">${av.answers.map((a,i)=>`<span style="background:rgba(5,115,250,0.08);color:var(--blue);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:700;">P${i+1}: ${a}</span>`).join('')}</div></div>`:''} ${rv?`<div style="margin-bottom:10px;"><div style="font-size:10px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;">⭐ Av. de Reação · Média: ${rv.media.toFixed(1)}/5 · ${rv.savedAt}</div><div style="display:flex;gap:6px;flex-wrap:wrap;">${rv.answers.map((a,i)=>`<span style="background:rgba(250,100,32,0.08);color:var(--orange);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:700;">P${i+1}: ${a}</span>`).join('')}</div></div>`:''} ${rsp?`<div><div style="font-size:10px;font-weight:700;color:var(--success);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;">✍️ Reflexão · ${rsp.savedAt}</div><div style="font-size:12px;color:var(--dark);line-height:1.6;"><strong>O que achou:</strong> ${rsp.q1}</div><div style="font-size:12px;color:var(--dark);line-height:1.6;margin-top:4px;"><strong>Como vai aplicar:</strong> ${rsp.q2}</div></div>`:''}</div>`).join('')}</div>`;
+    container.appendChild(s);
+  });
+  if(!hasAny)container.innerHTML=`<div class="card"><div class="empty-state"><div class="empty-icon">💬</div><div class="empty-title">Nenhuma resposta encontrada</div><div class="empty-desc">As respostas aparecerão aqui após os colaboradores preencherem as etapas.</div></div></div>`;
+}
+
+function renderAdminRanking(){
+  const ranked=getRanked();const tbody=document.getElementById('adminRankingBody');if(!tbody)return;tbody.innerHTML='';
+  ranked.forEach((c,i)=>{
+    const pos=i+1,rc=pos===1?'rank-1':pos===2?'rank-2':pos===3?'rank-3':'rank-other',medal=pos===1?'🥇':pos===2?'🥈':pos===3?'🥉':'';
+    const st=c.participated===c.total?'<span class="tag tag-green">100%</span>':c.participated>0?'<span class="tag tag-blue">Ativo</span>':'<span class="tag tag-gray">Inativo</span>';
+    const pr=calcProntidao(c.email);
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><div class="rank-position ${rc}">${medal||pos}</div></td><td><div class="collab-name-cell"><div class="collab-mini-avatar" style="background:${c.color}">${c.initials}</div><span style="font-weight:600;">${c.name}</span></div></td><td style="font-size:11px;color:var(--gray-text);">${c.email}</td><td style="font-size:12px;color:var(--gray-text);">${c.role}</td><td>${c.participated}/${c.total}</td><td>${c.autoCount}</td><td>${c.reacaoCount}</td><td>${c.reflexaoCount}</td><td><strong style="color:${pr.prontidao>=70?'var(--success)':pr.prontidao>=40?'var(--warning)':'var(--danger)'};">${pr.prontidao.toFixed(1)}%</strong></td><td><strong style="color:var(--orange);">${c.points}</strong> pts</td><td>${st}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function openAddCollab(){
+  if(!isAdmin()){showToast('Acesso restrito.','error');return;}
+  ['newCollabName','newCollabEmail','newCollabRole'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('newCollabArea').value='Manutenção';
+  document.getElementById('newCollabAccess').value='colaborador';
+  document.getElementById('btnSaveCollab').onclick=addCollab;
+  openModal('modalAddCollab');
+}
+
+function addCollab(){
+  const name=document.getElementById('newCollabName').value.trim();
+  const email=document.getElementById('newCollabEmail').value.trim().toLowerCase();
+  const role=document.getElementById('newCollabRole').value.trim();
+  const area=document.getElementById('newCollabArea').value.trim();
+  const access=document.getElementById('newCollabAccess').value;
+  if(!name||!email||!role){showToast('Preencha todos os campos obrigatórios.','error');return;}
+  if(appData.collaborators.find(c=>c.email.toLowerCase()===email)){showToast('Este e-mail já está cadastrado.','error');return;}
+  const colors=['#0573FA','#FA6420','#22C55E','#8B5CF6','#F59E0B','#EF4444','#06B6D4','#EC4899'];
+  const id=appData.collaborators.length;
+  appData.collaborators.push({id,name,email,role,area,initials:getInitials(name),color:colors[id%colors.length],access});
+  if(access==='colaborador'){appData.presence[email]={};appData.trainings.forEach(t=>{appData.presence[email][t.id]='pending';});}
+  closeModal('modalAddCollab');renderCollabListAdmin();showToast(`${name} adicionado(a) com sucesso!`,'success');
+}
+
+function editCollab(id){
+  const c=appData.collaborators[id];
+  document.getElementById('newCollabName').value=c.name;
+  document.getElementById('newCollabEmail').value=c.email;
+  document.getElementById('newCollabRole').value=c.role;
+  document.getElementById('newCollabArea').value=c.area||'Manutenção';
+  document.getElementById('newCollabAccess').value=c.access||'colaborador';
+  document.getElementById('btnSaveCollab').onclick=()=>{
+    const name=document.getElementById('newCollabName').value.trim();
+    const role=document.getElementById('newCollabRole').value.trim();
+    const area=document.getElementById('newCollabArea').value.trim();
+    if(!name||!role){showToast('Preencha todos os campos.','error');return;}
+    appData.collaborators[id].name=name;appData.collaborators[id].role=role;appData.collaborators[id].area=area;appData.collaborators[id].initials=getInitials(name);
+    closeModal('modalAddCollab');renderCollabListAdmin();showToast('Colaborador atualizado!','success');
+  };
+  openModal('modalAddCollab');
+}
+
+function updatePointsConfig(){
+  const a=parseInt(document.getElementById('configPtsAuto').value)||0;
+  const p=parseInt(document.getElementById('configPtsParticipacao').value)||0;
+  const r=parseInt(document.getElementById('configPtsReacao').value)||0;
+  const rf=parseInt(document.getElementById('configPtsReflexao').value)||0;
+  document.getElementById('configPtsTotal').textContent=(a+p+r+rf)+' pts';
+}
+
+function savePointsConfig(){
+  const a=parseInt(document.getElementById('configPtsAuto').value)||0;
+  const p=parseInt(document.getElementById('configPtsParticipacao').value)||0;
+  const r=parseInt(document.getElementById('configPtsReacao').value)||0;
+  const rf=parseInt(document.getElementById('configPtsReflexao').value)||0;
+  appData.pointsConfig.auto=a;appData.pointsConfig.participacao=p;appData.pointsConfig.reacao=r;appData.pointsConfig.reflexao=rf;
+  document.getElementById('displayPtsAuto').textContent=a;
+  document.getElementById('displayPtsParticipacao').textContent=p;
+  document.getElementById('displayPtsReacao').textContent=r;
+  document.getElementById('displayPtsReflexao').textContent=rf;
+  showToast('Configurações de pontuação salvas!','success');
+}
+
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+
+document.querySelectorAll('.modal-overlay').forEach(o=>{o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open');});});
+</script>
+</body>
+</html>
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
